@@ -8,7 +8,7 @@ import HeaderItem from "./HeaderItem";
 const Header = () => {
   return (
     <header>
-      <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+      <nav className="navbar navbar-expand-md navbar-dark bg-dark mb-3 text-center align-center">
         <div className="container">
           <div className="navbar-header">
             <Link to="/" className="navbar-brand">
@@ -28,9 +28,9 @@ const Header = () => {
                 <Link to="/ride" className="dropdown-item">
                   Ride to a destination
                 </Link>
-                <a href="../pages/deliver.php" className="dropdown-item">
+                <Link to="/deliver" className="dropdown-item">
                   Ride & Delivery
-                </a>
+                </Link>
               </HeaderDropdown>
 
               <HeaderDropdown title="Database Maintain">
