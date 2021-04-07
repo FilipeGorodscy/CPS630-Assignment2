@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const RidePreview = ({ car, source, destination }) => {
   //const carArr = car.split(" ");
@@ -8,8 +8,8 @@ const RidePreview = ({ car, source, destination }) => {
   };
 
   return (
-    <table class="table">
-      <thead class="thead-dark">
+    <table className="table">
+      <thead className="thead-dark">
         <tr>
           <th scope="col">Selected car</th>
           <th scope="col">Source</th>

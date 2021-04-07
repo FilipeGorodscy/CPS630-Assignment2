@@ -3,7 +3,7 @@ import React from "react";
 const FormInput = ({ setSource, setDestination }) => {
   return (
     <div>
-      <label for="source">Source</label>
+      <label htmlFor="source">Source</label>
       <input
         onChange={(e) => setSource(e.target.value)}
         className="form-control"
@@ -11,7 +11,7 @@ const FormInput = ({ setSource, setDestination }) => {
         placeholder="Enter source address"
       />
       <br />
-      <label for="destination">Destination</label>
+      <label htmlFor="destination">Destination</label>
       <input
         onChange={(e) => setDestination(e.target.value)}
         className="form-control"

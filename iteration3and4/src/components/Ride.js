@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import Map from "./Map";
+
 import RideForm from "./RideForm";
 
 const Ride = () => {
-  /* useEffect(() => {
-    //API CALL
-  }, []); */
+  const [source, setSource] = useState();
+  const [destination, setDestination] = useState();
 
   //mock data
   const cars = [
@@ -18,7 +19,15 @@ const Ride = () => {
     <div className="container">
       <h1 id="head">Plan your trip</h1>
       <br />
-      <RideForm cars={cars} />
+      <RideForm
+        cars={cars}
+        source={source}
+        destination={destination}
+        setSource={setSource}
+        setDestination={setDestination}
+      />
+      <br />
+      <Map source={source} destination={destination} />
     </div>
   );
 };

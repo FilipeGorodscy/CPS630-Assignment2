@@ -7,7 +7,7 @@ const FormDropdown = ({ cars, setCarID, setSelectedCar }) => {
 
   return (
     <div>
-      <label for="cars">Available cars</label>
+      <label htmlFor="cars">Available cars</label>
       <select onChange={(e) => onFormChange(e)} className="form-control" id="cars">
         <option defaultValue>Choose...</option>
         {cars.map((car) => {
