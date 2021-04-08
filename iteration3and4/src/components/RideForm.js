@@ -8,6 +8,7 @@ import RidePreview from "./RidePreview";
 const RideForm = ({ cars, source, setSource, destination, setDestination }) => {
   const [carID, setCarID] = useState(0);
   const [selectedCar, setSelectedCar] = useState({});
+  const [total, setTotal] = useState();
 
   useEffect(() => {
     //API CALL to retrieve data for selected car
@@ -15,6 +16,8 @@ const RideForm = ({ cars, source, setSource, destination, setDestination }) => {
       setSelectedCar(cars.filter((car) => car.id == carID)[0]);
     }
   }, [carID, cars]);
+
+  const validateConfirmation = () => selectedCar && source && destination;
 
   return (
     <form id="form">
@@ -25,9 +28,9 @@ const RideForm = ({ cars, source, setSource, destination, setDestination }) => {
           <>
             <FormInput setSource={setSource} setDestination={setDestination} />
             <br />
-            <RidePreview car={selectedCar} source={source} destination={destination} />
+            <RidePreview car={selectedCar} source={source} destination={destination} setTotal={setTotal} />
             <br />
-            <FormButtons />
+            <FormButtons price={total} validateConfirmation={validateConfirmation} />
           </>
         )}
       </div>

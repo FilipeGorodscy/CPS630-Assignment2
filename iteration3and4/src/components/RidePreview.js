@@ -1,21 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Table } from "react-bootstrap";
 
-const RidePreview = ({ car, source, destination }) => {
+const RidePreview = ({ setTotal, car, source, destination }) => {
   //const carArr = car.split(" ");
+
+  useEffect(() => {
+    setTotal(car.price * 20);
+  }, [car, setTotal]);
 
   const calcPrice = () => {
     return `$${car.price * 20}`;
   };
 
   return (
-    <table className="table">
-      <thead className="thead-dark">
+    <Table striped bordered hover>
+      <thead>
         <tr>
-          <th scope="col">Selected car</th>
-          <th scope="col">Source</th>
-          <th scope="col">Destination</th>
-          <th scope="col">Price per Km</th>
-          <th scope="col">Total</th>
+          <th>Selected car</th>
+          <th>Source</th>
+          <th>Destination</th>
+          <th>Price per Km</th>
+          <th>Total</th>
         </tr>
       </thead>
       <tbody>
@@ -27,7 +32,7 @@ const RidePreview = ({ car, source, destination }) => {
           <td id="price">{calcPrice()}</td>
         </tr>
       </tbody>
-    </table>
+    </Table>
   );
 };
 
