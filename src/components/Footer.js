@@ -70,7 +70,7 @@ const Footer = () => {
       <div className="text-center p-3 bg-dark">
         <span className="text-light">© 2020 Copyright: </span>
         <a className="text-light" href="https://github.com/RumGuru/P.2.S">
-          P2S Github Repository
+          Gogo Cars Github Repository
         </a>
       </div>
     </footer>
