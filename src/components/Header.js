@@ -35,6 +35,7 @@ const Header = () => {
           </Link>
         </NavDropdown>
       </Nav>
+      {/* Only show if logged as admin - set state equal to session php arr*/}
       <NavDropdown title="Database Maintain" id="basic-nav-dropdown">
         <Link to="/ride" className="dropdown-item">
           Ride to a destination
