@@ -4,13 +4,7 @@
   }
 }
 
-@media (max-height: 1670px) and (max-width: 992px) {
-  #footer {
-    position: relative;
-  }
-}
-
-@media (max-height: 1400px) and (min-width: 993px) {
+@media (max-width: 991px) {
   #footer {
     position: relative;
   }
