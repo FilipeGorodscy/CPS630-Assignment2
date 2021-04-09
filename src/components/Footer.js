@@ -18,8 +18,8 @@ const Footer = () => {
 
             <div>
               Gogo Cars is an online system that aims to plan for smart green trips inside the city and its neighborhood
-              through sharing vehicles. P2S attempts to provide a smart green solution on this regard by matching up
-              drivers who live, work, and finally drive in the same neighborhood and would like to provide trip
+              through sharing vehicles. Gogo Cars attempts to provide a smart green solution on this regard by matching
+              up drivers who live, work, and finally drive in the same neighborhood and would like to provide trip
               services.
             </div>
           </Col>
