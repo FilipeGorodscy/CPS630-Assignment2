@@ -10,8 +10,8 @@ import Developers from "./Developers";
 
 const Footer = () => {
   return (
-    <footer id="footer" className="fixed-bottom bg-light text-center text-lg-start">
-      <Container className="p-4">
+    <footer id="footer" className="relative bg-light text-center text-lg-start">
+      <Container className="p-4 mt-5">
         <Row>
           <Col lg={6} md={12} className="mb-4 mb-md-0">
             <h5 className="text-uppercase">About Us</h5>
