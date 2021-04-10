@@ -35,7 +35,9 @@ const Register = () => {
           <Link to="/login">Already have an account?</Link>
           <br />
           <Button variant="primary" type="submit" className="mt-2">
-            Register now
+            <Link to="/" className="text-light">
+              Register now
+            </Link>
           </Button>
         </Form.Group>
       </Form>
