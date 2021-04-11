@@ -5,6 +5,33 @@
 GET method. Required parameter:
     user_id - {a valid user id from user table}
 
+
+Sample return JSON:
+{
+    "deliveries": [
+        {
+            "date_issued": "2021-04-11 00:00:00",
+            "date_done": "2021-04-11 00:00:00",
+            "total_price": "20.99",
+            "username": "ssorra",
+            "email": "seit-sorra@hotmail.com",
+            "carName": "Audi update",
+            "carModel": "Audi-RS3",
+            "flowerName": "Spring Flower"
+        },
+        {
+            "date_issued": "2021-04-11 14:00:00",
+            "date_done": "2021-04-11 14:30:00",
+            "total_price": "20.99",
+            "username": "ssorra",
+            "email": "seit-sorra@hotmail.com",
+            "carName": "Audi update",
+            "carModel": "Audi-RS3",
+            "flowerName": "Spring Flower"
+        }
+    ]
+}
+
 */
 
 header("Access-Control-Allow-Origin: *");

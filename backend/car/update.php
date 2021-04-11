@@ -1,4 +1,20 @@
 <?php
+/* API Documentation
+
+Method: POST
+Required parameter: "car_id" - (a valid car id)
+Required parameter: "car_name" - (new car name value)
+Required parameter: "car_model" - (new car model value)
+
+RETURN:
+    HttpCode: <code>
+
+    JSON:
+    {
+        "message": "<message text>"
+    }
+*/
+
 // required headers
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");

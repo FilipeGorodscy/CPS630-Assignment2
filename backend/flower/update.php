@@ -1,4 +1,20 @@
 <?php
+/* API Documentation
+
+Method: POST
+Required parameter: "flower_id" - (a valid flower id)
+Required parameter: "flower_name" - (new flower name value)
+Required parameter: "flower_price" - (new flower model value)
+
+RETURN:
+    HttpCode: <code>
+
+    JSON:
+    {
+        "message": "<message text>"
+    }
+*/
+
 // required headers
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");

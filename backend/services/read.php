@@ -1,5 +1,40 @@
 <?php
 
+/* API Documentation
+
+Method: Get
+
+RETURN:
+    HttpCode: <code>
+
+    JSON on success:
+    {
+        "records": [
+            {
+                "id": "1",
+                "service_name": "Ride",
+                "description": "With our ride service you can get to where you want faster and safer"
+            },
+            {
+                "id": "2",
+                "service_name": "Delivery",
+                "description": "With our delivery service you can enjoy our finest choices of flower/coffee"
+            },
+            {
+                "id": "3",
+                "service_name": "Ride & Delivery",
+                "description": "With ride&delivery you can take a ride as well as pick your choice of items"
+            }
+        ]
+    }
+    
+    JSON on failure:
+    {
+        "message": "<message text>"
+    }
+
+*/
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 

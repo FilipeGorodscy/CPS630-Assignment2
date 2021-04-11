@@ -1,4 +1,27 @@
 <?php
+
+/* API Documentation
+
+Method: Get
+Required parameter: "id" - (a valid service id)
+
+RETURN:
+    HttpCode: <code>
+
+    JSON on success:
+    {
+        "id": "1",
+        "service_name": "Ride",
+        "description": "With our ride service you can get to where you want faster and safer"
+    }
+    
+    JSON on failure:
+    {
+        "message": "<message text>"
+    }
+
+*/
+
 // required headers
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: access");

@@ -1,5 +1,33 @@
 <?php
 
+/* API Documentation
+
+Method: Get
+
+RETURN:
+    HttpCode: <code>
+
+    JSON on success:
+    {
+        "records": [
+            {
+                "id": "1",
+                "name": "Audi",
+                "model": "Audi A6",
+                "img_path": "images/cars/audi.jpg",
+                "code": 1,
+                "available": 1
+            },
+            ...
+        ]
+    }
+
+    JSON on failure:
+    {
+        "message": "<message text>"
+    }
+*/
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 

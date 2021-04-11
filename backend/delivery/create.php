@@ -12,6 +12,13 @@ This is a sample JSON that this API accepts:
     "flower_id": 1
 }
 
+RETURN:
+    HttpCode: <code>
+    
+    JSON:
+    {
+        "message": "<message text>"
+    }
 */
 
 

@@ -1,5 +1,24 @@
 <?php
 
+/* API Documentation
+
+This api endpoint expects the following:
+
+POST Form data with the following parameters:
+
+"car_name" <text>
+"car_model" <text>
+"user_image" <file>
+
+RETURN:
+    HttpCode: <code>
+    
+    JSON:
+    {
+        "message": "<message text>"
+    }
+*/
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");

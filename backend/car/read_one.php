@@ -1,4 +1,29 @@
 <?php
+/* API Documentation
+
+Method: Get
+Required parameter: "id" - (a valid car id)
+
+RETURN:
+    HttpCode: <code>
+
+    JSON on success:
+    {
+        "id": "1",
+        "name": "Audi",
+        "model": "Audi A6",
+        "img_path": "images/cars/audi.jpg",
+        "code": 1,
+        "available": 1
+    }
+    
+    JSON on failure:
+    {
+        "message": "<message text>"
+    }
+
+*/
+
 // required headers
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: access");

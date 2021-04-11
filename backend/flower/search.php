@@ -1,4 +1,33 @@
 <?php
+/* API Documentation
+
+Method: Get
+Required parameter: "keyword" - (representing the flower name)
+
+RETURN:
+    HttpCode: <code>
+
+    JSON on success:
+    {
+        "records": [
+            {
+                "id": "1",
+                "name": "Spring Flower",
+                "store_code": "1",
+                "img_path": "images/flowers/spring.jpg",
+                "price": "12.99"
+            },
+            ...
+        ]
+    }
+
+    JSON on failure:
+    {
+        "message": "<message text>"
+    }
+
+*/
+
 // required headers
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");

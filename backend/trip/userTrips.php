@@ -1,5 +1,41 @@
 <?php
 
+/* API documentation 
+
+GET method. Required parameter:
+    user_id - {a valid user id from user table}
+
+
+Sample return JSON:
+{
+    "trips": [
+        {
+            "date": "2021-03-08 07:20:00",
+            "source": "35 Soudan Avenue, Toronto, ON, Canada",
+            "destination": "2800 Yonge Street, Toronto, ON, Canada",
+            "distance": "1.80",
+            "price": "1.80",
+            "username": "ssorra",
+            "useremail": "seit-sorra@hotmail.com",
+            "car_name": "Audi update",
+            "car_model": "Audi-RS3"
+        },
+        {
+            "date": "2021-03-09 18:02:00",
+            "source": "4000 Yonge Street, North York, ON, Canada",
+            "destination": "2300 Yonge Street, Toronto, ON, Canada",
+            "distance": "4.10",
+            "price": "4.06",
+            "username": "ssorra",
+            "useremail": "seit-sorra@hotmail.com",
+            "car_name": "Audi update",
+            "car_model": "Audi-RS3"
+        }
+    ]
+}
+
+*/
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 

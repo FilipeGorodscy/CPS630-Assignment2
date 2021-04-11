@@ -1,5 +1,29 @@
 <?php
 
+/* API documentation 
+
+This is a sample JSON that this API accepts:
+
+{
+    "source" : "<source address>",
+    "destination" : <destination address>",
+    "distance": "12.45 km",
+    "price": 23.40,
+    "date": "April 11, 2021",
+    "time": "14:30",
+    "car_id": 2,
+    "user_id": 1
+}
+
+RETURN:
+    HttpCode: <code>
+
+    JSON:
+    {
+        "message": "<message text>"
+    }
+*/
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");

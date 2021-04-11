@@ -1,5 +1,24 @@
 <?php
 
+/* API Documentation
+
+This api endpoint expects the following:
+
+POST Form data with the following parameters:
+
+"flower_name" <text>
+"flower_price" <text>
+"user_image" <file>
+
+RETURN:
+    HttpCode: <code>
+    
+    JSON:
+    {
+        "message": "<message text>"
+    }
+*/
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Methods: POST");
@@ -35,7 +54,7 @@ if(!empty($flower_name) && !empty($flower_price)){
 
     if($flower->create()){
         http_response_code(200);
-        echo json_encode(array("message" => "Car was created successfully."));
+        echo json_encode(array("message" => "Flower was created successfully."));
     }
     else{
         http_response_code(503); // unavailable service code
