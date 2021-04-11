@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS flowers;
 DROP TABLE IF EXISTS car;
 DROP TABLE IF EXISTS trip;
 DROP TABLE IF EXISTS delivery;
+DROP TABLE IF EXISTS services;
 
 /* create new tables */
 CREATE TABLE users (
@@ -68,6 +69,12 @@ CREATE TABLE delivery (
     FOREIGN KEY(flower_id) REFERENCES flowers(id) ON DELETE CASCADE
 );
 
+CREATE TABLE services (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    service_name VARCHAR(50) NOT NULL UNIQUE,
+    description VARCHAR(255) NOT NULL
+);
+
 /* Insert initial data */
 
 INSERT INTO flowers (store_code, img_path, name, price) VALUES
@@ -79,3 +86,8 @@ INSERT INTO car (name, model, img_path, code) VALUES
 ('BMW', 'BMW-x1', 'images/cars/bmw.jpg', 1),
 ('Audi', 'Audi-RS3', 'images/cars/audi.jpg', 1),
 ('Mercedes', 'CLS', 'images/cars/mercedes.jpg', 1);
+
+INSERT INTO services (service_name, description) VALUES
+('Ride', 'With our ride service you can get to where you want faster and safer'),
+('Delivery', 'With our delivery service you can enjoy our finest choices of flower/coffee'),
+('Ride & Delivery', 'With ride&delivery you can take a ride as well as pick your choice of items');
