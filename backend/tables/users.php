@@ -78,7 +78,7 @@ class User {
         $stmt->execute();
 
         if($stmt->rowCount() == 0){
-            return;
+            return false;
         }
       
         // get retrieved row
@@ -86,10 +86,12 @@ class User {
       
         // set values to object properties
         $this->username = $row['username'];
+        $this->password = $row['password'];
         $this->email = $row['email'];
         $this->phone = $row['phone'];
         $this->address = $row['address'];
         $this->created_at = $row['created_at'];
+        return true;
     }
 
     function update(){
