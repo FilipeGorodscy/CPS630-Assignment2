@@ -11,6 +11,8 @@ import ShoppingCart from "./ShoppingCart";
 import Ride from "./Ride";
 import Checkout from "./Checkout";
 import { Container } from "react-bootstrap";
+import Login from "./Login";
+import RideGreen from "./RideGreen";
 
 const App = () => {
   const [total, setTotal] = useState();
@@ -21,6 +23,7 @@ const App = () => {
       <Route path="/about" component={AboutUs} />
       <Route path="/contact" component={ContactUs} />
       <Route path="/register" component={Register} />
+      <Route path="/login" component={Login} />
       <Route
         path="/shopping-cart"
         render={() => (
@@ -30,6 +33,7 @@ const App = () => {
         )}
       />
       <Route path="/ride" render={() => <Ride total={total} setTotal={setTotal} />} />
+      <Route path="/ride-green" render={() => <RideGreen total={total} setTotal={setTotal} />} />
       <Route path="/checkout" render={() => <Checkout total={total} />} />
       <Footer />
     </Router>

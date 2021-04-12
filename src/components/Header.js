@@ -21,7 +21,7 @@ const Header = () => {
           Contact Us
         </Link>
         <Link to="/register" className="nav-link">
-          Sign Up
+          Sign In/Up
         </Link>
         <Link to="/shopping-cart" className="nav-link">
           Shopping Cart

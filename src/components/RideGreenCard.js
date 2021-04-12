@@ -11,7 +11,7 @@ const RideGreenCard = () => {
       <p>Find out what is better for your experience with us.</p>
       <br />
       <Button variant="primary">
-        <Link to="/ride" className="text-light">
+        <Link to="/ride-green" className="text-light">
           Compare your options
         </Link>
       </Button>

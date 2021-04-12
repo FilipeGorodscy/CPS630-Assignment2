@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Map from "./Map";
+import { Container } from "react-bootstrap";
 import axios from "axios";
 
 import RideForm from "./RideForm";
+import Map from "./Map";
 
 const Ride = ({ total, setTotal }) => {
   const [source, setSource] = useState();
@@ -20,7 +21,7 @@ const Ride = ({ total, setTotal }) => {
   }, []);
 
   return (
-    <div className="container">
+    <Container className="mt-5">
       <h1 id="head">Plan your trip</h1>
       <br />
       <RideForm
@@ -35,7 +36,7 @@ const Ride = ({ total, setTotal }) => {
       />
       <br />
       <Map setDistance={setDistance} source={source} destination={destination} />
-    </div>
+    </Container>
   );
 };
 

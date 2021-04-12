@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { ListGroup } from "react-bootstrap";
+
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import OrderItem from "./OrderItem";
 import ShoppingCart from "./ShoppingCart";
 
 const ShoppingCartPreview = ({ total }) => {

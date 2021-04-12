@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Form, Col, InputGroup, FormControl, Row } from "react-bootstrap";
-import ShoppingCart from "./ShoppingCart";
+
 import ShoppingCartPreview from "./ShoppingCartPreview";
 
 const Checkout = () => {
