@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Header from "./Header";
@@ -12,16 +12,17 @@ import Ride from "./Ride";
 import Checkout from "./Checkout";
 
 const App = () => {
+  const [total, setTotal] = useState();
   return (
-    <Router>
+    <Router basename="/react">
       <Header />
       <Route exact path="/" component={Home} />
       <Route path="/about" component={AboutUs} />
       <Route path="/contact" component={ContactUs} />
       <Route path="/register" component={Register} />
       <Route path="/shopping-cart" component={ShoppingCart} />
-      <Route path="/ride" component={Ride} />
-      <Route path="/checkout" component={Checkout} />
+      <Route path="/ride" render={() => <Ride total={total} setTotal={setTotal} />} />
+      <Route path="/checkout" render={() => <Checkout total={total} />} />
       <Footer />
     </Router>
   );

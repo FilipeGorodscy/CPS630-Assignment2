@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const FormButtons = ({ price, validateConfirmation }) => {
   const storeTotal = (e, price) => {
     // set to DB preferably (orders table)
-    e.preventDefault();
+    alert("Your order was saved");
     const total = localStorage.getItem("total");
     if (total) {
       price += parseInt(total);
@@ -20,14 +20,14 @@ const FormButtons = ({ price, validateConfirmation }) => {
             type="submit"
             onClick={(e) => storeTotal(e, price)}
             className="btn btn-outline-secondary w-100"
-            value="Add to shopping cart"
+            value="Ride later"
           />
           <br />
-          <button className="btn btn-secondary w-100 mt-2">
-            <Link className="text-light" to="/checkout">
+          {
+            <Link to="/shopping-cart" className="text-light btn btn-secondary w-100 mt-2">
               Proceed to checkout
             </Link>
-          </button>
+          }
         </div>
       )}
     </div>

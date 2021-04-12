@@ -37,11 +37,17 @@ const Header = () => {
       </Nav>
       {/* Only show if logged as admin - set state equal to session php arr*/}
       <NavDropdown title="Database Maintain" id="basic-nav-dropdown">
-        <Link to="/ride" className="dropdown-item">
-          Ride to a destination
+        <Link to="/" className="dropdown-item">
+          ADD
         </Link>
-        <Link to="/deliver" className="dropdown-item">
-          Ride & Delivery
+        <Link to="/" className="dropdown-item">
+          DELETE
+        </Link>
+        <Link to="/" className="dropdown-item">
+          EDIT
+        </Link>
+        <Link to="/" className="dropdown-item">
+          SEARCH
         </Link>
       </NavDropdown>
       <Form inline>

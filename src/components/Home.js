@@ -5,6 +5,8 @@ import Banner from "./Banner";
 import RideCard from "./RideCard";
 import DeliveryCard from "./DeliveryCard";
 import "../styles/Home.css";
+import RideGreenCard from "./RideGreenCard";
+import Service4 from "./Service4";
 
 const Home = () => {
   return (
@@ -13,10 +15,12 @@ const Home = () => {
       <Row className="justify-content-between">
         <Col lg={6}>
           <RideCard />
+          <RideGreenCard />
         </Col>
         <div id="separator" />
         <Col lg={6}>
           <DeliveryCard />
+          <Service4 />
         </Col>
       </Row>
     </Container>

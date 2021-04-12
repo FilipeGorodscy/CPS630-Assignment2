@@ -1,7 +1,7 @@
 import React from "react";
 
-const Checkout = () => {
-  return <div>Checkout</div>;
+const Checkout = ({ total }) => {
+  return <div>{total}</div>;
 };
 
 export default Checkout;

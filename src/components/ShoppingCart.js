@@ -39,11 +39,9 @@ const ShoppingCart = () => {
         {orders.map((order) => {
           return <OrderItem key={order.id} id={order.id} type={order.type} items={order.items} total={order.total} />;
         })}
-        <button className="btn btn-secondary w-100 mt-2">
-          <Link className="text-light" to="/checkout">
-            Proceed to checkout
-          </Link>
-        </button>
+        <Link to="/checkout" className="text-light btn btn-secondary w-100 mt-2">
+          Proceed to checkout
+        </Link>
       </div>
     </div>
   );

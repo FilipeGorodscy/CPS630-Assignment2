@@ -5,7 +5,7 @@ import Geocode from "react-geocode";
 const KEY = "AIzaSyCT0erosDR5II_8-FtZMdtCjCC_o5p2msE";
 Geocode.setApiKey(KEY);
 
-const Map = ({ source, destination }) => {
+const Map = ({ setDistance, source, destination }) => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: KEY,
@@ -27,6 +27,7 @@ const Map = ({ source, destination }) => {
         (result, status) => {
           if (status === window.google.maps.DirectionsStatus.OK) {
             setDirections(result);
+            setDistance(parseInt(result.routes[0].legs[0].distance.value / 1000));
           } else {
             console.log("Error Occurred. Status Code: " + status);
           }
@@ -35,7 +36,7 @@ const Map = ({ source, destination }) => {
     }
     codeSource(source);
     codeDest(destination);
-  }, [source, destination]);
+  }, [source, destination, setDistance]);
 
   const codeSource = async (source = "Toronto") => {
     const sourceRes = await Geocode.fromAddress(source);
