@@ -29,7 +29,7 @@ class Car{
     function create(){
         // query to insert record
         $query = "INSERT INTO " . $this->table_name . " SET 
-                name=:name, model=:model, img_path=:img_path, code=:code, available=:available";
+                name=:name, model=:model, img_path=:img_path, code=:code, available=:available, price=:price, year=:year";
       
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -40,6 +40,8 @@ class Car{
         $this->img_path=htmlspecialchars(strip_tags($this->img_path));
         $this->code=htmlspecialchars(strip_tags($this->code));
         $this->available=htmlspecialchars(strip_tags($this->available));
+        $this->price=htmlspecialchars(strip_tags($this->price));
+        $this->year=htmlspecialchars(strip_tags($this->year));
       
         // bind values
         $stmt->bindParam(":name", $this->name);
@@ -47,6 +49,8 @@ class Car{
         $stmt->bindParam(":img_path", $this->img_path);
         $stmt->bindParam(":code", $this->code);
         $stmt->bindParam(":available", $this->available);
+        $stmt->bindParam(":price", $this->price);
+        $stmt->bindParam(":year", $this->year);
       
         // execute query
         if($stmt->execute()){
@@ -81,6 +85,8 @@ class Car{
         $this->img_path = $row['img_path'];
         $this->code = $row['code'];
         $this->available = $row['available'];
+        $this->price = $row['price'];
+        $this->year = $row['year'];
         return true;
     }
 

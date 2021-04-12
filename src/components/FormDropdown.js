@@ -11,7 +11,7 @@ const FormDropdown = ({ cars, setCarID, setSelectedCar }) => {
       <select onChange={(e) => onFormChange(e)} className="form-control" id="cars">
         <option defaultValue>Choose...</option>
         {cars.map((car) => {
-          return <option key={car.id} value={car.id}>{`$${car.price} ${car.make} ${car.model} - ${car.year}`}</option>;
+          return <option key={car.id} value={car.id}>{`$${car.price} ${car.name} ${car.model} - ${car.year}`}</option>;
         })}
       </select>
     </div>

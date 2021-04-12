@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const FormButtons = ({ price, validateConfirmation }) => {
+const FormButtons = ({ price, validateConfirmation, checkout }) => {
   const storeTotal = (e, price) => {
     // set to DB preferably (orders table)
     alert("Your order was saved");
@@ -24,7 +24,7 @@ const FormButtons = ({ price, validateConfirmation }) => {
           />
           <br />
           {
-            <Link to="/shopping-cart" className="text-light btn btn-secondary w-100 mt-2">
+            <Link onClick={() => checkout()} to="/shopping-cart" className="text-light btn btn-secondary w-100 mt-2">
               Proceed to checkout
             </Link>
           }

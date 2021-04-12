@@ -1,14 +1,18 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 
-const OrderItem = ({ id, type, items, total }) => {
+const OrderItem = ({ id, date, source, destination, carName, carModel, price }) => {
   return (
     <Card>
-      <Card.Header>Order Number {id}</Card.Header>
+      <Card.Header>Date: {date}</Card.Header>
       <Card.Body>
-        <Card.Title>Type: {type}</Card.Title>
-        {items && <Card.Text>Items: {items.map((item) => item.toUpperCase() + " ")}</Card.Text>}
-        <Card.Footer>Total: ${total}</Card.Footer>
+        <Card.Title>
+          {source} to {destination}
+        </Card.Title>
+        <Card.Text>
+          Car: {carName} {carModel}
+        </Card.Text>
+        <Card.Footer>Price: ${price}</Card.Footer>
       </Card.Body>
     </Card>
   );

@@ -60,7 +60,9 @@ if($num > 0){
             "model" => html_entity_decode($model),
             "img_path" => $img_path,
             "code" => $code,
-            "available" => $available // 0 => Not Available; 1 => Available
+            "available" => $available, // 0 => Not Available; 1 => Available
+            "price"=> $price,
+            "year" => $year
         );
   
         array_push($cars_arr["records"], $car_item);

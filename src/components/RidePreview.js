@@ -21,7 +21,7 @@ const RidePreview = ({ setTotal, distance, car, source, destination }) => {
       </thead>
       <tbody>
         <tr>
-          <td>{`${car.make} ${car.model} - ${car.year}`}</td>
+          <td>{`${car.name} ${car.model} - ${car.year}`}</td>
           <td>{source}</td>
           <td>{destination}</td>
           <td id="price-km">{`$${car.price}`}/km</td>

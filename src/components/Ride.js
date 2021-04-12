@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Map from "./Map";
 import axios from "axios";
 
@@ -8,20 +8,16 @@ const Ride = ({ total, setTotal }) => {
   const [source, setSource] = useState();
   const [destination, setDestination] = useState();
   const [distance, setDistance] = useState();
+  const [cars, setCars] = useState([]);
 
-  //mock data
-  /* const cars = [
-    { id: 1, model: "Model S", make: "Tesla", year: "2021", price: "10" },
-    { id: 2, model: "Model 3", make: "Tesla", year: "2020", price: "10" },
-    { id: 3, model: "Model X", make: "Tesla", year: "2020", price: "10" },
-    { id: 4, model: "Model Y", make: "Tesla", year: "2021", price: "10" },
-  ]; */
   useEffect(() => {
-    axios.get;
-    return () => {
-      cleanup;
+    const fetchCars = async () => {
+      const res = await axios.get("http://localhost/backend/car/read.php");
+      const cars = res.data.records;
+      setCars(cars);
     };
-  }, [input]);
+    fetchCars();
+  }, []);
 
   return (
     <div className="container">

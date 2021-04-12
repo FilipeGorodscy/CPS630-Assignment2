@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 import FormDropdown from "./FormDropdown";
 import FormInput from "./FormInput";
@@ -10,13 +11,25 @@ const RideForm = ({ total, setTotal, distance, cars, source, setSource, destinat
   const [selectedCar, setSelectedCar] = useState({});
 
   useEffect(() => {
-    //API CALL to retrieve data for selected car
     if (carID) {
-      setSelectedCar(cars.filter((car) => car.id === parseInt(carID))[0]);
+      setSelectedCar(cars.filter((car) => car.id === carID)[0]);
     }
   }, [carID, cars]);
 
   const validateConfirmation = () => selectedCar && source && destination;
+
+  const checkout = () => {
+    axios.post("http://localhost/backend/trip/create.php", {
+      source: source,
+      destination: destination,
+      distance: distance,
+      price: total,
+      date: "April 11, 2021",
+      time: "14:30",
+      car_id: carID,
+      user_id: 1,
+    });
+  };
 
   return (
     <form id="form">
@@ -35,7 +48,7 @@ const RideForm = ({ total, setTotal, distance, cars, source, setSource, destinat
               setTotal={setTotal}
             />
             <br />
-            <FormButtons price={total} validateConfirmation={validateConfirmation} />
+            <FormButtons checkout={checkout} price={total} validateConfirmation={validateConfirmation} />
           </>
         )}
       </div>

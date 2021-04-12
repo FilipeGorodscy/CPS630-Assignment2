@@ -50,7 +50,9 @@ if($car->readOne()){
         "model" => html_entity_decode($car->model),
         "img_path" => $car->img_path,
         "code" => $car->code,
-        "available" => $car->available // 0 => Not Available; 1 => Available
+        "available" => $car->available, // 0 => Not Available; 1 => Available
+        "price" => $car->price,
+        "year" => $car->year,
     );
 
     // set response code - 200 OK
