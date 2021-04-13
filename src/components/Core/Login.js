@@ -6,10 +6,14 @@ import { Redirect } from "react-router";
 const Login = ({ setUsername }) => {
   const [loggedIn, setLoggedIn] = useState();
   const [usernameGiven, setUsernameGiven] = useState();
+  const [passwordGiven, setPasswordGiven] = useState();
 
   const onFormSubmit = async (e) => {
     e.preventDefault();
-    const res = await axios.get("http://localhost/backend/user/read_one.php", { params: { username: usernameGiven } });
+    const res = await axios.post("http://localhost/backend/users/read_one.php", {
+      username: usernameGiven,
+      password: passwordGiven,
+    });
     if (res.data) {
       setLoggedIn(true);
       const user = res.data.username;
@@ -29,7 +33,7 @@ const Login = ({ setUsername }) => {
 
         <Form.Group>
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control onChange={(e) => setPasswordGiven(e.target.value)} type="password" placeholder="Password" />
         </Form.Group>
 
         <Button variant="primary" type="submit">

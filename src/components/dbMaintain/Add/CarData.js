@@ -13,7 +13,7 @@ const CarData = ({ insertData }) => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    insertData("car", data);
+    insertData("cars", data);
   };
 
   return (
