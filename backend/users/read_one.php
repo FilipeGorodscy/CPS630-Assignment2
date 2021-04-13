@@ -16,19 +16,20 @@ $db = $database->getConnection();
 $user = new User($db);
 
 $found = false;
-  
+
+$data = json_decode(file_get_contents("php://input"));
+
 // Check if user_id was requested 
-if(isset($_GET['id'])){
-    $user->id = $_GET['id'];
+if(!empty($data->id)){
+    $user->id = $data->id;
     if($user->readOne()){
         $found = true;
     }
 }
 // Check if username was requested
-else if(isset($_POST['username']) && isset($_POST['password'])){
-    $user->username = $_POST['username'];
-    $user->password = md5($_POST['password']);
-
+else if(!empty($data->username) && !empty($data->password) ){
+    $user->username = $data->username;
+    $user->password = md5($data->password);
     if($user->username_exists()){
         $found = true;
     }
