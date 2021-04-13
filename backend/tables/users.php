@@ -58,9 +58,13 @@ class User {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
       
         // set values to object properties
+        $this->id = $row['id'];
         $this->username = $row['username'];
         $this->password = $row['password'];
-        $this->id = $row['id'];
+        $this->email = $row['email'];
+        $this->phone = $row['phone'];
+        $this->address = $row['address'];
+        $this->created_at = $row['created_at'];
         return true;
     }
 
@@ -85,6 +89,7 @@ class User {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
       
         // set values to object properties
+        $this->id = $row['id'];
         $this->username = $row['username'];
         $this->password = $row['password'];
         $this->email = $row['email'];
