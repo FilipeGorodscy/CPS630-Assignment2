@@ -46,9 +46,10 @@ class User {
 
     // Used for login checking
     function username_exists(){
-        $query = "SELECT * FROM " . $this->table_name . " WHERE username = ? LIMIT 0,1";
+        $query = "SELECT * FROM " . $this->table_name . " WHERE username = ? AND password = ? LIMIT 0,1";
         $stmt = $this->conn->prepare( $query );
         $stmt->bindParam(1, $this->username);
+        $stmt->bindParam(2, $this->password);
         $stmt->execute();
         if($stmt->rowCount() == 0){
             return false;
