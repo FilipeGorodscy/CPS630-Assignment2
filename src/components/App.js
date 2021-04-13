@@ -28,7 +28,7 @@ const App = () => {
       <Route path="/contact" component={ContactUs} />
       <Route path="/signInUp" render={() => <SignInUp setUsername={setUsername} />} />
       <Route path="/register" component={Register} />
-      <Route path="/deliver" render={() => <Ride total={total} setTotal={setTotal} />} />
+      <Route path="/deliver" render={() => <Delivery total={total} setTotal={setTotal} />} />
       <Route path="/login" render={() => <Login setUsername={setUsername} />} />
       <Route
         path="/shopping-cart"
