@@ -4,9 +4,9 @@ import { Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-boots
 
 import logo from "../images/logo.png";
 
-const Header = () => {
+const Header = ({ username }) => {
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" expand="xl">
       <Link to="/" className="navbar-brand">
         <img src={logo} alt="Logo" />
       </Link>
@@ -20,7 +20,7 @@ const Header = () => {
         <Link to="/contact" className="nav-link">
           Contact Us
         </Link>
-        <Link to="/register" className="nav-link">
+        <Link to="/signInUp" className="nav-link">
           Sign In/Up
         </Link>
         <Link to="/shopping-cart" className="nav-link">
@@ -36,22 +36,24 @@ const Header = () => {
         </NavDropdown>
       </Nav>
       {/* Only show if logged as admin - set state equal to session php arr*/}
-      <NavDropdown title="Database Maintain" id="basic-nav-dropdown">
-        <Link to="/" className="dropdown-item">
-          ADD
-        </Link>
-        <Link to="/" className="dropdown-item">
-          DELETE
-        </Link>
-        <Link to="/" className="dropdown-item">
-          EDIT
-        </Link>
-        <Link to="/" className="dropdown-item">
-          SEARCH
-        </Link>
-      </NavDropdown>
+      {username === "admin" && (
+        <NavDropdown title="Database Maintain" id="basic-nav-dropdown">
+          <Link to="/" className="dropdown-item">
+            ADD
+          </Link>
+          <Link to="/" className="dropdown-item">
+            DELETE
+          </Link>
+          <Link to="/" className="dropdown-item">
+            EDIT
+          </Link>
+          <Link to="/" className="dropdown-item">
+            SEARCH
+          </Link>
+        </NavDropdown>
+      )}
       <Form inline>
-        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+        <FormControl type="text" placeholder="Search" />
         <Button variant="outline-primary">Search</Button>
       </Form>
     </Navbar>

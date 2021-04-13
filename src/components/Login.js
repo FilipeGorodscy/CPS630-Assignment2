@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
 import { Redirect } from "react-router";
 
-const Login = () => {
+const Login = ({ setUsername }) => {
   const [loggedIn, setLoggedIn] = useState();
 
   const onFormSubmit = async (e) => {
@@ -11,6 +11,9 @@ const Login = () => {
     const res = await axios.get("http://localhost/backend/user/read_one.php", { params: { id: 1 } });
     if (res.data) {
       setLoggedIn(true);
+      const user = res.data.username;
+      sessionStorage.setItem("username", user);
+      setUsername(user);
     }
   };
 
@@ -18,7 +21,7 @@ const Login = () => {
     <Container className="mt-5 p-5 border">
       <h3>Login</h3>
       <Form onSubmit={(e) => onFormSubmit(e)}>
-        <Form.Group controlId="formBasicEmail">
+        <Form.Group>
           <Form.Label>Username</Form.Label>
           <Form.Control placeholder="Enter username" />
         </Form.Group>
