@@ -35,19 +35,19 @@ $car = new Car($db);
 
 $car_name = $car_model = "";
 $car_price = $car_year = 0;
-if(isset($_POST["car_name"])){
+/* if(isset($_POST["car_name"])){
     $car_name = $_POST["car_name"];
     $car_model = $_POST["car_model"];
     $car_price = $_POST["car_price"];
     $car_year = $_POST["car_year"];
-}
+} */
+$data = json_decode(file_get_contents("php://input"));
 
-
-if(!empty($car_name) && !empty($car_model)){
-    $car->name = $car_name;
-    $car->model = $car_model;
-    $car->price = $car_price;
-    $car->year = $car_year;
+if(!empty($data->car_name) && !empty($data->car_model)){
+    $car->name = $data->car_name;
+    $car->model =$data->car_model;
+    $car->price =$data->car_price;
+    $car->year = $data->car_year;
 
     $file = "";
     if(isset($_FILES["user_image"])){

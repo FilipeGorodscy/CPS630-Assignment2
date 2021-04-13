@@ -34,14 +34,15 @@ $db = $database->getConnection();
 $flower = new Flower($db);
 
 $flower_name = $flower_price = "";
-if(isset($_POST["flower_name"])){
+/* if(isset($_POST["flower_name"])){
     $flower_name = $_POST["flower_name"];
     $flower_price = $_POST["flower_price"];
-}
+} */
+$data = json_decode(file_get_contents("php://input"));
 
-if(!empty($flower_name) && !empty($flower_price)){
-    $flower->name = $flower_name;
-    $flower->price = $flower_price;
+if(!empty($data->flower_name) && !empty($data->flower_price)){
+    $flower->name = $data->flower_name;
+    $flower->price = $data->flower_price;
 
     $file = "";
     if(isset($_FILES["user_image"])){

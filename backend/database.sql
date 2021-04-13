@@ -82,10 +82,10 @@ INSERT INTO flowers (store_code, img_path, name, price) VALUES
 (1, 'images/flowers/lotus.jpg', 'Lotus Flower', 22.99),
 (1, 'images/flowers/roses.jpg', 'Rose', 15.99);
 
-INSERT INTO car (name, model, img_path, code) VALUES
-('BMW', 'BMW-x1', 'images/cars/bmw.jpg', 1),
-('Audi', 'Audi-RS3', 'images/cars/audi.jpg', 1),
-('Mercedes', 'CLS', 'images/cars/mercedes.jpg', 1);
+INSERT INTO car (name, model, img_path, code, available, year, price) VALUES
+('BMW', 'BMW-x1', 'images/cars/bmw.jpg', 1, 1, "2021", 5),
+('Audi', 'Audi-RS3', 'images/cars/audi.jpg', 1, 1, "2020", 3),
+('Mercedes', 'CLS', 'images/cars/mercedes.jpg', 1, 1, "2019", 2);
 
 INSERT INTO services (service_name, description) VALUES
 ('Ride', 'With our ride service you can get to where you want faster and safer'),

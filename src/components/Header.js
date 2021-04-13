@@ -38,16 +38,16 @@ const Header = ({ username }) => {
       {/* Only show if logged as admin - set state equal to session php arr*/}
       {username === "admin" && (
         <NavDropdown title="Database Maintain" id="basic-nav-dropdown">
-          <Link to="/" className="dropdown-item">
+          <Link to="/add" className="dropdown-item">
             ADD
           </Link>
-          <Link to="/" className="dropdown-item">
+          <Link to="/delete" className="dropdown-item">
             DELETE
           </Link>
-          <Link to="/" className="dropdown-item">
+          <Link to="/edit" className="dropdown-item">
             EDIT
           </Link>
-          <Link to="/" className="dropdown-item">
+          <Link to="/search" className="dropdown-item">
             SEARCH
           </Link>
         </NavDropdown>

@@ -15,6 +15,7 @@ import Login from "./Login";
 import RideGreen from "./RideGreen";
 import SignInUp from "./SignInUp";
 import Delivery from "./Delivery";
+import Add from "./dbMaintain/Add/Add";
 
 const App = () => {
   const [total, setTotal] = useState();
@@ -40,6 +41,7 @@ const App = () => {
       <Route path="/ride" render={() => <Ride total={total} setTotal={setTotal} />} />
       <Route path="/ride-green" render={() => <RideGreen total={total} setTotal={setTotal} />} />
       <Route path="/checkout" render={() => <Checkout total={total} />} />
+      <Route path="/add" component={Add} />
       <Footer />
     </Router>
   );

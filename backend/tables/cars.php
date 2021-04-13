@@ -12,6 +12,8 @@ class Car{
     public $img_path;
     public $code;
     public $available;
+    public $price;
+    public $year;
   
     // constructor with $db as database connection
     public function __construct($db){
