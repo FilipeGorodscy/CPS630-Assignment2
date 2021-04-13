@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Jumbotron, Row } from "react-bootstrap";
-import DeliveryCard from "./DeliveryCard";
-import RideCard from "./RideCard";
+import DeliveryCard from "../Delivery/DeliveryCard";
+import RideCard from "../Ride/RideCard";
 
 const AboutUs = () => {
   const [services, setServices] = useState(false);

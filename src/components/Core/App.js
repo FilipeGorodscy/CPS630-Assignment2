@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Header from "./Header";
-import Footer from "./Footer";
-import Home from "./Home";
-import AboutUs from "./AboutUs";
-import ContactUs from "./ContactUs";
+import Header from "../Basic/Header";
+import Footer from "../Basic/Footer";
+import Home from "../Basic/Home";
+import ContactUs from "../Basic/ContactUs";
 import Register from "./Register";
-import ShoppingCart from "./ShoppingCart";
-import Ride from "./Ride";
-import Checkout from "./Checkout";
+import ShoppingCart from "../Checkout-ShoppingCart/ShoppingCart";
+import Ride from "../Ride/Ride";
+import Checkout from "../Checkout-ShoppingCart/Checkout";
 import { Container } from "react-bootstrap";
 import Login from "./Login";
-import RideGreen from "./RideGreen";
+import RideGreen from "../RideGreen/RideGreen";
 import SignInUp from "./SignInUp";
-import Delivery from "./Delivery";
-import Add from "./dbMaintain/Add/Add";
+import Delivery from "../Delivery/Delivery";
+import Add from "../dbMaintain/Add/Add";
+import Delete from "../dbMaintain/Delete/Delete";
+import AboutUs from "../Basic/AboutUs";
 
 const App = () => {
   const [total, setTotal] = useState();
@@ -42,6 +43,7 @@ const App = () => {
       <Route path="/ride-green" render={() => <RideGreen total={total} setTotal={setTotal} />} />
       <Route path="/checkout" render={() => <Checkout total={total} />} />
       <Route path="/add" component={Add} />
+      <Route path="/delete" component={Delete} />
       <Footer />
     </Router>
   );

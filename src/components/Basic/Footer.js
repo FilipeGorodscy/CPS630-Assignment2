@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
-import "../styles/Footer.css";
-import fg from "../images/Gorodscy.jpg";
-import rk from "../images/RumGuru.png";
-import mf from "../images/MatthewFranks.png";
-import ss from "../images/SeitSorra.png";
-import Developers from "./Developers";
+import "../../styles/Footer.css";
+import fg from "../../images/Gorodscy.jpg";
+import rk from "../../images/RumGuru.png";
+import mf from "../../images/MatthewFranks.png";
+import ss from "../../images/SeitSorra.png";
+import Developers from "../Basic/Developers";
 
 const Footer = () => {
   return (

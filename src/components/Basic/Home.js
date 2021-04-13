@@ -2,11 +2,11 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 import Banner from "./Banner";
-import RideCard from "./RideCard";
-import DeliveryCard from "./DeliveryCard";
-import "../styles/Home.css";
-import RideGreenCard from "./RideGreenCard";
-import Service4 from "./Service4";
+import RideCard from "../Ride/RideCard";
+import DeliveryCard from "../Delivery/DeliveryCard";
+import "../../styles/Home.css";
+import RideGreenCard from "../RideGreen/RideGreenCard";
+import Service4 from "../Service4";
 
 const Home = () => {
   return (
