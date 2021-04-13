@@ -75,6 +75,14 @@ CREATE TABLE services (
     description VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE review (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    rating INT NOT NULL CHECK (rating >= 1 AND rating <= 5),
+    description VARCHAR(4000),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
 /* Insert initial data */
 
 INSERT INTO flowers (store_code, img_path, name, price) VALUES
