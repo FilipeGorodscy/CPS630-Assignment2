@@ -25,8 +25,10 @@ if(isset($_GET['id'])){
     }
 }
 // Check if username was requested
-else if(isset($_GET['username'])){
-    $user->username = $_GET['username'];
+else if(isset($_POST['username']) && isset($_POST['password'])){
+    $user->username = $_POST['username'];
+    $user->password = md5($_POST['password']);
+
     if($user->username_exists()){
         $found = true;
     }

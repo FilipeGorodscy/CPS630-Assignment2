@@ -20,9 +20,9 @@ if(!empty($data->username) && !empty($data->password)
     && !empty($data->email) && !empty($data->phone) && !empty($data->address) ){
 
     $user->username = $data->username; 
-    $user->password = $data->password;
-    $user->email = $data->email; 
-    $user->phone = $data->phone; 
+    $user->password = md5($data->password);
+    $user->email = $data->email;
+    $user->phone = $data->phone;
     $user->address = $data->address;
 
     if($user->create()){
