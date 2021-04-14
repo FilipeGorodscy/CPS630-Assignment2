@@ -4,6 +4,8 @@ import axios from "axios";
 
 import DeliveryCart from './DeliveryCart';
 import FlowerCards from './FlowerCards';
+import Board from './Board';
+
 
 const Delivery = ({total, setTotal}) => {
 
@@ -19,23 +21,21 @@ useEffect(() => {
     fetchFlowers();
   }, []);
 
-
+console.log(total);
   
   return (
     <Container fluid>
     <h1>Delivery Service</h1>
   <Row>
     <Col sm={10}>
-      
-      {flowers.map((flower) =>{
-        return (<FlowerCards id={flower.id} className='card' name={flower.name} price={flower.price} img={flower.img_path} > </FlowerCards>)
-      })};
-       
+    <Board>
+    <FlowerCards id='1' className='card' img ='https://source.unsplash.com/random' name='random' price='9.99'></FlowerCards>
+    </Board>  
     </Col>
     
     <Col sm={2}>
-    
-    <DeliveryCart id='board-2' className='cart'><h6>Hello World</h6></DeliveryCart> 
+    <h6>Checkout</h6>
+    <DeliveryCart id='board-2' className='cart' setCart={setFlowersInCheckout} setTotalPrice={setTotal}> {flowersInCheckout} </DeliveryCart> 
 
     </Col>
   
@@ -112,4 +112,14 @@ export default Delivery;
     </div>
 
   </div>
+
+Take flowers from state
+
+{flowers.map((flower) =>{
+        return (<FlowerCards id={flower.id} className='card' name={flower.name} price={flower.price} img={flower.img_path} > </FlowerCards>)
+      })};
+
+
+
+
 */
