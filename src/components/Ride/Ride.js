@@ -13,7 +13,7 @@ const Ride = ({ total, setTotal }) => {
 
   useEffect(() => {
     const fetchCars = async () => {
-      const res = await axios.get("http://localhost/backend/car/read.php");
+      const res = await axios.get("http://localhost/backend/cars/read.php");
       const cars = res.data.records;
       setCars(cars);
     };

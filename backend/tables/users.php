@@ -46,9 +46,10 @@ class User {
 
     // Used for login checking
     function username_exists(){
-        $query = "SELECT * FROM " . $this->table_name . " WHERE username = ? LIMIT 0,1";
+        $query = "SELECT * FROM " . $this->table_name . " WHERE username = ? AND password = ? LIMIT 0,1";
         $stmt = $this->conn->prepare( $query );
         $stmt->bindParam(1, $this->username);
+        $stmt->bindParam(2, $this->password);
         $stmt->execute();
         if($stmt->rowCount() == 0){
             return false;
@@ -58,9 +59,13 @@ class User {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
       
         // set values to object properties
+        $this->id = $row['id'];
         $this->username = $row['username'];
         $this->password = $row['password'];
-        $this->id = $row['id'];
+        $this->email = $row['email'];
+        $this->phone = $row['phone'];
+        $this->address = $row['address'];
+        $this->created_at = $row['created_at'];
         return true;
     }
 
@@ -85,6 +90,7 @@ class User {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
       
         // set values to object properties
+        $this->id = $row['id'];
         $this->username = $row['username'];
         $this->password = $row['password'];
         $this->email = $row['email'];

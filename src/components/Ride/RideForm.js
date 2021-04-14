@@ -19,7 +19,7 @@ const RideForm = ({ total, setTotal, distance, cars, source, setSource, destinat
   const validateConfirmation = () => selectedCar && source && destination;
 
   const checkout = () => {
-    axios.post("http://localhost/backend/trip/create.php", {
+    axios.post("http://localhost/backend/trips/create.php", {
       source: source,
       destination: destination,
       distance: distance,

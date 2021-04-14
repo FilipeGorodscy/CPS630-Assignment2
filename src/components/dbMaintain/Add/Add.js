@@ -20,9 +20,6 @@ const Add = () => {
         <Button variant="secondary" onClick={() => setSelected("FLOWERS")}>
           FLOWERS
         </Button>
-        <Button variant="secondary" onClick={() => setSelected("USERS")}>
-          USERS
-        </Button>
         <Button variant="secondary" onClick={() => setSelected("TRIPS")}>
           TRIPS
         </Button>

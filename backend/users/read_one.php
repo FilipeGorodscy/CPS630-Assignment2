@@ -14,11 +14,28 @@ $database = new Database();
 $db = $database->getConnection();
   
 $user = new User($db);
-  
-// set ID property of record to read
-$user->id = isset($_GET['id']) ? $_GET['id'] : die("No id provided");
 
-if($user->readOne()){
+$found = false;
+
+$data = json_decode(file_get_contents("php://input"));
+
+// Check if user_id was requested 
+if(!empty($data->id)){
+    $user->id = $data->id;
+    if($user->readOne()){
+        $found = true;
+    }
+}
+// Check if username was requested
+else if(!empty($data->username) && !empty($data->password) ){
+    $user->username = $data->username;
+    $user->password = md5($data->password);
+    if($user->username_exists()){
+        $found = true;
+    }
+}
+
+if($found){
     $user_array=array(
         "id" => $user->id,
         "username" => $user->username,
@@ -36,6 +53,6 @@ if($user->readOne()){
 else{
     // set response code - 404 Not found
     http_response_code(404);
-    echo json_encode(array("message" => "User with id " . $user->id . " does not exist."));
+    echo json_encode(array("message" => "Unable to find requested user."));
 }
 ?>

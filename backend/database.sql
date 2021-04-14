@@ -6,8 +6,8 @@ USE asg1;
 /* drop existing tables */
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS flowers;
-DROP TABLE IF EXISTS car;
-DROP TABLE IF EXISTS trip;
+DROP TABLE IF EXISTS cars;
+DROP TABLE IF EXISTS trips;
 DROP TABLE IF EXISTS delivery;
 DROP TABLE IF EXISTS services;
 
@@ -30,7 +30,7 @@ CREATE TABLE flowers (
     price FLOAT(10, 2) DEFAULT 0.0
 );
 
-CREATE TABLE car (
+CREATE TABLE cars (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL,
     model VARCHAR(50) NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE car (
                                    1 => available */
 );
 
-CREATE TABLE trip (
+CREATE TABLE trips (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     source VARCHAR(50) NOT NULL,
     destination VARCHAR(50) NOT NULL,
@@ -75,6 +75,14 @@ CREATE TABLE services (
     description VARCHAR(255) NOT NULL
 );
 
+CREATE TABLE review (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    rating INT NOT NULL CHECK (rating >= 1 AND rating <= 5),
+    description VARCHAR(4000),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
 /* Insert initial data */
 
 INSERT INTO flowers (store_code, img_path, name, price) VALUES
@@ -82,7 +90,7 @@ INSERT INTO flowers (store_code, img_path, name, price) VALUES
 (1, 'images/flowers/lotus.jpg', 'Lotus Flower', 22.99),
 (1, 'images/flowers/roses.jpg', 'Rose', 15.99);
 
-INSERT INTO car (name, model, img_path, code, available, year, price) VALUES
+INSERT INTO cars (name, model, img_path, code, available, year, price) VALUES
 ('BMW', 'BMW-x1', 'images/cars/bmw.jpg', 1, 1, "2021", 5),
 ('Audi', 'Audi-RS3', 'images/cars/audi.jpg', 1, 1, "2020", 3),
 ('Mercedes', 'CLS', 'images/cars/mercedes.jpg', 1, 1, "2019", 2);

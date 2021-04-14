@@ -1,6 +1,7 @@
 import React from "react";
 import CarData from "./CarData";
 import FlowerData from "./FlowerData";
+import TripData from "./TripData";
 
 const RenderSelected = ({ selected, insertData }) => {
   switch (selected) {
@@ -8,10 +9,8 @@ const RenderSelected = ({ selected, insertData }) => {
       return <CarData insertData={insertData} />;
     case "FLOWERS":
       return <FlowerData insertData={insertData} />;
-    case "USERS":
-      return <div>USERS</div>;
     case "TRIPS":
-      return <div>TRIPS</div>;
+      return <TripData insertData={insertData} />;
     case "ORDERS":
       return <div>ORDERS</div>;
     default:

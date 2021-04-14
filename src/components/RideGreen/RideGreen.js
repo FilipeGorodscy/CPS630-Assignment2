@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import Delivery from "./Delivery";
-import Ride from "./Ride";
+import Delivery from "../Delivery/Delivery";
+import Ride from "../Ride/Ride";
 
 const RideGreen = ({ total, setTotal }) => {
   const [ride, setRide] = useState(true);

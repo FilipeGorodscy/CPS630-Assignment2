@@ -1,10 +1,10 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
 
-import teslaS from "../images/teslaS.png";
-import tesla3 from "../images/tesla3.jpeg";
-import teslaX from "../images/teslaX.jpeg";
-import teslaY from "../images/teslaY.jpeg";
+import teslaS from "../../images/teslaS.png";
+import tesla3 from "../../images/tesla3.jpeg";
+import teslaX from "../../images/teslaX.jpeg";
+import teslaY from "../../images/teslaY.jpeg";
 
 const Banner = () => {
   //src from cars table maybe
