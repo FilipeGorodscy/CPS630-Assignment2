@@ -22,14 +22,12 @@ const dragOver = (e)=>{
     return (
       
         <Card id={props.id} className={props.className} draggable="true" onDragStart={dragStart}  onDragOver={dragOver} style={{ width: '18rem' }}>
-          <Card.Img variant="top" height='200px' src="https://source.unsplash.com/eH5gAM2X2wQ/1000x1000" />
+          <Card.Img variant="top" height='200px' src={props.img} />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>{props.name}</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
+              {props.price}
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
           </Card.Body>
         </Card>
      

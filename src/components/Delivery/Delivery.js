@@ -26,7 +26,11 @@ useEffect(() => {
     <h1>Delivery Service</h1>
   <Row>
     <Col sm={10}>
-       <FlowerCards id='card-1' className='card'> </FlowerCards>
+      
+      {flowers.map((flower) =>{
+        return (<FlowerCards id={flower.id} className='card' name={flower.name} price={flower.price} img={flower.img_path} > </FlowerCards>)
+      })};
+       
     </Col>
     
     <Col sm={2}>
