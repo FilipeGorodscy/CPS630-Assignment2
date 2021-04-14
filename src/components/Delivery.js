@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Container } from "react-bootstrap";
+import { Container, Col , Row } from "react-bootstrap";
 import axios from "axios";
+
+import DeliveryCart from './DeliveryCart';
+import FlowerCards from './FlowerCards';
 
 const Delivery = ({total, setTotal}) => {
 
@@ -17,11 +20,21 @@ useEffect(() => {
   }, []);
   
   return (
-    <Container className='mt-5'>
+    <Container fluid>
     <h1>Delivery Service</h1>
+  <Row>
+    <Col sm={10}>
+      <FlowerCards allFlowers = {flowers}/>
+    </Col>
+    
+    <Col sm={2}> 
+    <DeliveryCart cartItems = {flowersInCheckout} /> 
+    </Col>
+  </Row>
     </Container>
     
   );
+  
     
 
   
