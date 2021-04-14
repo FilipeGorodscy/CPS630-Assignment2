@@ -3,7 +3,6 @@ import { Container, Col , Row , Card, Button } from "react-bootstrap";
 import axios from "axios";
 
 import DeliveryCart from './DeliveryCart';
-import Board from './Board';
 import FlowerCards from './FlowerCards';
 
 const Delivery = ({total, setTotal}) => {
@@ -26,11 +25,9 @@ useEffect(() => {
     <h1>Delivery Service</h1>
   <Row>
     <Col sm={10}>
-
-     <Board id='board-1' className='board'>
        <FlowerCards id='card-1' className='card'> </FlowerCards>
-     </Board>
-
+       <FlowerCards id='card-2' className='card'> </FlowerCards>
+       <FlowerCards id='card-3' className='card'> </FlowerCards>
     </Col>
     
     <Col sm={2}>

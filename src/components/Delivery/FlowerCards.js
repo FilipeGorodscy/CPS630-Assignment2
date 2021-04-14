@@ -22,7 +22,7 @@ const dragOver = (e)=>{
     return (
       
         <Card id={props.id} className={props.className} draggable="true" onDragStart={dragStart}  onDragOver={dragOver} style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="https://source.unsplash.com/random/" />
+          <Card.Img variant="top" height='200px' src="https://source.unsplash.com/eH5gAM2X2wQ/1000x1000" />
           <Card.Body>
             <Card.Title>Card Title</Card.Title>
             <Card.Text>
