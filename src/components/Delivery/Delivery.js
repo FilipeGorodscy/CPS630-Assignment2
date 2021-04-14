@@ -26,8 +26,6 @@ useEffect(() => {
   <Row>
     <Col sm={10}>
        <FlowerCards id='card-1' className='card'> </FlowerCards>
-       <FlowerCards id='card-2' className='card'> </FlowerCards>
-       <FlowerCards id='card-3' className='card'> </FlowerCards>
     </Col>
     
     <Col sm={2}>
