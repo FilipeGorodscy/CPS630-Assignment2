@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Container, Col , Row } from "react-bootstrap";
+import { Container, Col , Row , Card, Button } from "react-bootstrap";
 import axios from "axios";
 
 import DeliveryCart from './DeliveryCart';
+import Board from './Board';
 import FlowerCards from './FlowerCards';
 
 const Delivery = ({total, setTotal}) => {
@@ -18,18 +19,26 @@ useEffect(() => {
     };
     fetchFlowers();
   }, []);
+
   
   return (
     <Container fluid>
     <h1>Delivery Service</h1>
   <Row>
     <Col sm={10}>
-      <FlowerCards allFlowers = {flowers}/>
+
+     <Board id='board-1' className='board'>
+       <FlowerCards id='card-1' className='card'> </FlowerCards>
+     </Board>
+
     </Col>
     
-    <Col sm={2}> 
-    <DeliveryCart cartItems = {flowersInCheckout} /> 
+    <Col sm={2}>
+    
+    <DeliveryCart id='board-2' className='cart'><h6>Hello World</h6></DeliveryCart> 
+
     </Col>
+  
   </Row>
     </Container>
     
@@ -48,7 +57,20 @@ export default Delivery;
   const [source, setSource] = useState();
   const [destination, setDestination] = useState();
   const [distance, setDistance] = useState();
-  const [cars, setCars] = useState([]);*/
+  const [cars, setCars] = useState([]);
+  
+
+
+
+
+  <FlowerCards allFlowers = {flowers}/> 
+  <DeliveryCart cartItems = {flowersInCheckout} /> 
+  
+
+
+
+
+  */
 
 /* Flower object contains "id": "1",
                 "name": "Spring Flower",
