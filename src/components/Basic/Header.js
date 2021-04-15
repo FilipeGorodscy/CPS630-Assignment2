@@ -26,6 +26,9 @@ const Header = ({ username }) => {
         <Link to="/shopping-cart" className="nav-link">
           Shopping Cart
         </Link>
+        <Link to="/reviews" className="nav-link">
+          Reviews
+        </Link>
         <NavDropdown title="Types of Services" id="basic-nav-dropdown">
           <Link to="/ride" className="dropdown-item">
             Ride to a destination
