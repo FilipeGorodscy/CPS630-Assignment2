@@ -25,7 +25,6 @@ useEffect(() => {
 
         const card = document.getElementById(card_id);
         card.style.display = 'block';
-
         //e.target.appendChild(card);
         e.target.insertAdjacentHTML('beforeend',('<p>$9.99</p>'));
         setPrice(totalPrice + parseFloat(card_price));
