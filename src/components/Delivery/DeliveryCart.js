@@ -33,7 +33,7 @@ useEffect(() => {
             date_issued: "April 14, 2021 18:00",
             date_done: "April 14, 2021 18:01",
             total_price: parseFloat(card_price),
-            car_id: 9,
+            car_id: 1,
             user_id: 1,
             flower_id: parseInt(card_id)
         }
