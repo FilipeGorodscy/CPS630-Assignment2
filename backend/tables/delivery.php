@@ -118,10 +118,10 @@ class Delivery{
 
     function getUserDeliveries($user_id){
         $query = "SELECT delivery.date_issued, delivery.date_done, delivery.total_price, 
-                        users.username, users.email, car.name as carName, car.model as carModel, flowers.name as flowerName
+                        users.username, users.email, cars.name as carName, cars.model as carModel, flowers.name as flowerName
                 FROM delivery 
                 INNER JOIN users ON users.id=delivery.user_id
-                INNER JOIN car ON car.id=delivery.car_id
+                INNER JOIN cars ON cars.id=delivery.car_id
                 INNER JOIN flowers ON flowers.id=delivery.flower_id
                 WHERE users.id = ?
                 ORDER BY delivery.date_issued";

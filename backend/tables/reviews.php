@@ -3,7 +3,7 @@ class Review{
   
     // database connection and table name
     private $conn;
-    private $table_name = "review";
+    private $table_name = "reviews";
   
     // columns
     public $id;

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Form, Button, Container } from "react-bootstrap";
-import { Redirect } from "react-router";
+import { Redirect, Link } from "react-router-dom";
 
 const Login = ({ setUsername }) => {
   const [loggedIn, setLoggedIn] = useState();
@@ -35,6 +35,8 @@ const Login = ({ setUsername }) => {
           <Form.Label>Password</Form.Label>
           <Form.Control onChange={(e) => setPasswordGiven(e.target.value)} type="password" placeholder="Password" />
         </Form.Group>
+
+        <Link to="/register">Don't have an account?</Link>
 
         <Button variant="primary" type="submit">
           Submit

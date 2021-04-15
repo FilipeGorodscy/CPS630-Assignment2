@@ -3,7 +3,7 @@ class Trips{
   
     // database connection and table name
     private $conn;
-    private $table_name = "trip";
+    private $table_name = "trips";
   
     // columns
     public $id;
@@ -115,13 +115,13 @@ class Trips{
     }
 
     function getUserTrips($user_id){
-        $query = "SELECT trip.date, trip.source, trip.destination, trip.distance, trip.price, 
-                        users.username, users.email, car.name, car.model
-                FROM trip 
-                INNER JOIN users ON users.id=trip.user_id
-                INNER JOIN car ON car.id=trip.car_id
+        $query = "SELECT trips.date, trips.source, trips.destination, trips.distance, trips.price, 
+                        users.username, users.email, cars.name, cars.model
+                FROM trips
+                INNER JOIN users ON users.id=trips.user_id
+                INNER JOIN cars ON cars.id=trips.car_id
                 WHERE users.id = ?
-                ORDER BY trip.date";
+                ORDER BY trips.date";
         
         // prepare query
         $stmt = $this->conn->prepare($query);

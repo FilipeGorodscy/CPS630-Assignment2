@@ -16,6 +16,7 @@ import SignInUp from "./SignInUp";
 import Delivery from "../Delivery/Delivery";
 import Add from "../dbMaintain/Add/Add";
 import Delete from "../dbMaintain/Delete/Delete";
+import Search from "../dbMaintain/Search/Search";
 import AboutUs from "../Basic/AboutUs";
 import GroceryDelivery from '../Groceries/GroceryDelivery';
 
@@ -46,6 +47,7 @@ const App = () => {
       <Route path="/checkout" render={() => <Checkout total={total} />} />
       <Route path="/add" component={Add} />
       <Route path="/delete" component={Delete} />
+      <Route path="/search" component={Search} />
       <Footer />
     </Router>
   );
