@@ -7,13 +7,18 @@ import OrderItem from "./OrderItem";
 
 const ShoppingCart = ({ hidden }) => {
   const [trips, setTrips] = useState([]);
+  const [deliveries, setDeliveries] = useState([]);
 
   useEffect(() => {
     const fetchTrips = async () => {
       const res = await axios.get("http://localhost/backend/trip/userTrips.php", { params: { user_id: 1 } });
       setTrips(res.data.trips);
     };
-    fetchTrips();
+    const fetchDeliveries = async () => {
+      const res = await axios.get("http://localhost/backend/delivery/userDeliveries.php", { params: { user_id: 1 } });
+      setDeliveries(res.data.deliveries);
+    };
+    fetchDeliveries();
   }, []);
 
   return (

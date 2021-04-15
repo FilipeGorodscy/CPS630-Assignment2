@@ -65,14 +65,17 @@ useEffect(() => {
         <div id={props.id} className={props.className} onDrop={drop} onDragOver={dragOver} style={{height: "600px"}}>
             <h6>Total Price:{totalPrice}</h6>
             {props.children}
-          <Button onClick={()=>set_Total_OBJ(totalPrice)}>Checkout</Button>  
+          
+          <Link onClick={() => set_Total_OBJ(totalPrice)} to="/shopping-cart" className="text-light btn btn-secondary w-100 mt-2">
+              Proceed to checkout
+          </Link>
         </div>
     );
 }
 
 export default DeliveryCart;
 
-//<Button onclick={setTotal}>Checkout</Button>
+//<Button onclick={setTotal}>Checkout</Button>  <Button onClick={()=>set_Total_OBJ(totalPrice)}>Checkout</Button> 
 
 /*
 "date_issued": "April 11, 2021 14:00",
