@@ -28,9 +28,7 @@ const ShoppingCart = ({ hidden }) => {
       setGroceries(res.data.groceries);
     };
     fetchGroceries();
-    console.log(groceries);
   }, []);
-  console.log(groceries);
   return (
     <div>
       <h3>Your Shopping Cart</h3>
@@ -65,19 +63,7 @@ const ShoppingCart = ({ hidden }) => {
             );
           })}
           {groceries.map((grocery) => {
-            console.log(grocery);
-            console.log(grocery.items);
-            grocery.items.map((el)=>{
-              console.log(el);
-              return (
-              <OrderItem
-                groceryName={el.name}
-                price={el.price}
-              />
-            );
-            })
-              
-            
+            return <OrderItem grocery={grocery.items} />;
           })}
           {!hidden && (
             <Link to="/checkout" className="text-light btn btn-secondary w-100 mt-2">
