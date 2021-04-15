@@ -64,15 +64,12 @@ const ShoppingCart = ({ hidden }) => {
               />
             );
           })}
-          {groceries.map((grocery) => {
+          {groceries.items.map((grocery) => {
             console.log(grocery);
             return (
               <OrderItem
-                key={grocery.items.id}
-                date={grocery.date_issued}
                 groceryName={grocery.items.name}
-                items={grocery}
-                price={grocery.total_price}
+                price={grocery.items.price}
               />
             );
           })}
