@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Card , Button } from "react-bootstrap";
 //import axios from "axios";
 
-const FlowerCards = (props) =>{
+const GroceryCards = (props) =>{
 
 const dragStart = (e) =>{
   const target = e.target;
@@ -37,7 +37,7 @@ const dragOver = (e)=>{
     );
 };
 
-export default FlowerCards;
+export default GroceryCards;
 
 /*
 <div id={props.id} className={props.className} draggable="true" onDragStart={dragStart}  onDragOver={dragOver}>

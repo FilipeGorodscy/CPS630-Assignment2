@@ -2,33 +2,39 @@ import React, { useState, useEffect } from "react";
 import { Container, Col , Row , Card, Button } from "react-bootstrap";
 import axios from "axios";
 
-import DeliveryCart from './DeliveryCart';
-import FlowerCards from './FlowerCards';
+import GroceryCart from './GroceryCart';
+import GroceryCards from './GroceryCards';
 import Board from './Board';
 
 
 const GroceryDelivery = ({total, setTotal}) => {
 
-const [flowers, setFlowers] = useState([]);
+const [groceries, setGroceries] = useState([]);
 //const [flowersInCheckout, setFlowersInCheckout] = useState([]);
 
 useEffect(() => {
-    const fetchFlowers = async () => {
-      const res = await axios.get("http://localhost/backend/flowers/read.php");
-      const flowers = res.data.records;
-      setFlowers(flowers);
+    const fetchGrocery = async () => {
+      const res = await axios.get("http://localhost/backend/grocery_items/read.php");
+      const grocery = res.data.records;
+      setGroceries(grocery);
     };
-    fetchFlowers();
+    fetchGrocery();
   }, []);
 
 console.log(total);
 
-const postObjects = (flower_objects) => {
-  console.log(flower_objects);
-  for (let key of flower_objects) {
-    console.log(key);
-  axios.post("http://localhost/backend/delivery/create.php", key);
-}
+const postObjects = (grocery_objects , price) => {
+  console.log(grocery_objects);
+  let grocery_obj = {
+    date_issued: "April 15, 2021 18:00",
+    date_done: "April 15, 2021 18:01",
+    total_price: price,
+    user_id: 1,
+    items:grocery_objects
+  };
+console.log(grocery_obj);
+  axios.post("http://localhost/backend/delivery/create.php", grocery_obj);
+
 };
 
   return (
@@ -37,16 +43,15 @@ const postObjects = (flower_objects) => {
   <Row>
     <Col sm={10}>
     <Board>
-    {flowers.map((flower) =>{
-        return (<FlowerCards id={flower.id} className='card' name={flower.name} price={flower.price} img={flower.img_path} > </FlowerCards>)
+    {groceries.map((grocery) =>{
+        return (<GroceryCards id={grocery.id} className='card' name={grocery.name} price={grocery.price} img={grocery.img_path} > </GroceryCards>)
       })};
     </Board>  
     </Col>
-    
+
     <Col sm={2}>
     <h6>Checkout</h6>
-    <DeliveryCart id='board-2' className='cart' setCart={setFlowersInCheckout} setTotalPrice={setTotal} objectList={postObjects}> {flowersInCheckout} </DeliveryCart> 
-
+    <GroceryCart id='board-2' className='cart' setTotalPrice={setTotal} objectList={postObjects}></GroceryCart> 
     </Col>
   
   </Row>
@@ -60,7 +65,7 @@ const postObjects = (flower_objects) => {
 
 };
 
-export default Delivery;
+export default GroceryDelivery;
 
 
 /*const Ride = ({ total, setTotal }) => {
@@ -135,5 +140,9 @@ Take flowers from state
     <FlowerCards id='2' className='card' img ='https://source.unsplash.com/random' name='randomm' price='9.99'></FlowerCards>
 
 
+    date_issued: "April 15, 2021 18:00",
+            date_done: "April 15, 2021 18:01",
+            total_price: parseFloat(card_price),
+            user_id: 1,
 
 */
