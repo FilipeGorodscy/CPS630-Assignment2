@@ -64,14 +64,20 @@ const ShoppingCart = ({ hidden }) => {
               />
             );
           })}
-          {groceries.items.map((grocery) => {
+          {groceries.map((grocery) => {
             console.log(grocery);
-            return (
+            console.log(grocery.items);
+            grocery.items.map((el)=>{
+              console.log(el);
+              return (
               <OrderItem
-                groceryName={grocery.items.name}
-                price={grocery.items.price}
+                groceryName={el.name}
+                price={el.price}
               />
             );
+            })
+              
+            
           })}
           {!hidden && (
             <Link to="/checkout" className="text-light btn btn-secondary w-100 mt-2">
