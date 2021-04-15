@@ -59,7 +59,7 @@ console.log(grocery_obj);
     
   );
   
-    
+  
 
   
 
@@ -144,5 +144,7 @@ Take flowers from state
             date_done: "April 15, 2021 18:01",
             total_price: parseFloat(card_price),
             user_id: 1,
+
+            test
 
 */
