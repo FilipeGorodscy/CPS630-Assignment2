@@ -3,7 +3,7 @@ class Review{
   
     // database connection and table name
     private $conn;
-    private $table_name = "reviews";
+    private $table_name = "review";
   
     // columns
     public $id;
@@ -28,7 +28,7 @@ class Review{
     function create(){
         // query to insert record
         $query = "INSERT INTO " . $this->table_name . " SET 
-                name=:name, rating=:rating, description=:description, created_at=:created_at";
+                name=:name, rating=:rating, description=:description";
       
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -37,13 +37,11 @@ class Review{
         $this->name=htmlspecialchars(strip_tags($this->name));
         $this->name=htmlspecialchars(strip_tags($this->rating));
         $this->model=htmlspecialchars(strip_tags($this->description));
-        $this->model=htmlspecialchars(strip_tags($this->created_at));
       
         // bind values
         $stmt->bindParam(":name", $this->name);
         $stmt->bindParam(":rating", $this->rating);
         $stmt->bindParam(":description", $this->description);
-        $stmt->bindParam(":created_at", $this->created_at);
       
         // execute query
         if($stmt->execute()){
