@@ -7,10 +7,10 @@ import FlowerCards from './FlowerCards';
 import Board from './Board';
 
 
-const Delivery = ({total, setTotal}) => {
+const GroceryDelivery = ({total, setTotal}) => {
 
 const [flowers, setFlowers] = useState([]);
-const [flowersInCheckout, setFlowersInCheckout] = useState([]);
+//const [flowersInCheckout, setFlowersInCheckout] = useState([]);
 
 useEffect(() => {
     const fetchFlowers = async () => {
