@@ -25,6 +25,7 @@ console.log(total);
 
 const postObjects = (flower_objects) => {
   for (let flower in flower_objects) {
+    console.log(flower);
   axios.post("http://localhost/backend/delivery/create.php", flower);
 } 
 };
