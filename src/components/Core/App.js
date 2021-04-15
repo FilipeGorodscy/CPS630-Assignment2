@@ -18,7 +18,8 @@ import Add from "../dbMaintain/Add/Add";
 import Delete from "../dbMaintain/Delete/Delete";
 import Search from "../dbMaintain/Search/Search";
 import AboutUs from "../Basic/AboutUs";
-import GroceryDelivery from '../Groceries/GroceryDelivery';
+import GroceryDelivery from "../Groceries/GroceryDelivery";
+import Review from "../Basic/Review";
 
 const App = () => {
   const [total, setTotal] = useState();
@@ -48,6 +49,7 @@ const App = () => {
       <Route path="/add" component={Add} />
       <Route path="/delete" component={Delete} />
       <Route path="/search" component={Search} />
+      <Route path="/reviews" component={Review} />
       <Footer />
     </Router>
   );
