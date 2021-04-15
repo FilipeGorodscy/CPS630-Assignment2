@@ -35,8 +35,9 @@ const postObjects = (flower_objects) => {
   <Row>
     <Col sm={10}>
     <Board>
-    <FlowerCards id='1' className='card' img ='https://source.unsplash.com/random' name='random' price='9.99'></FlowerCards>
-    <FlowerCards id='2' className='card' img ='https://source.unsplash.com/random' name='randomm' price='9.99'></FlowerCards>
+    {flowers.map((flower) =>{
+        return (<FlowerCards id={flower.id} className='card' name={flower.name} price={flower.price} img={flower.img_path} > </FlowerCards>)
+      })};
     </Board>  
     </Col>
     
@@ -126,6 +127,10 @@ Take flowers from state
         return (<FlowerCards id={flower.id} className='card' name={flower.name} price={flower.price} img={flower.img_path} > </FlowerCards>)
       })};
 
+      or 
+
+      <FlowerCards id='1' className='card' img ='https://source.unsplash.com/random' name='random' price='9.99'></FlowerCards>
+    <FlowerCards id='2' className='card' img ='https://source.unsplash.com/random' name='randomm' price='9.99'></FlowerCards>
 
 
 
