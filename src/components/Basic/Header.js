@@ -33,6 +33,9 @@ const Header = ({ username }) => {
           <Link to="/deliver" className="dropdown-item">
             Ride & Delivery
           </Link>
+          <Link to="/grocery" className="dropdown-item">
+            Grocery & Delivery
+          </Link>
         </NavDropdown>
       </Nav>
       {/* Only show if logged as admin - set state equal to session php arr*/}

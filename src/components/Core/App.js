@@ -18,6 +18,7 @@ import Add from "../dbMaintain/Add/Add";
 import Delete from "../dbMaintain/Delete/Delete";
 import Search from "../dbMaintain/Search/Search";
 import AboutUs from "../Basic/AboutUs";
+import GroceryDelivery from '../Groceries/GroceryDelivery';
 
 const App = () => {
   const [total, setTotal] = useState();
@@ -31,6 +32,7 @@ const App = () => {
       <Route path="/signInUp" render={() => <SignInUp setUsername={setUsername} />} />
       <Route path="/register" component={Register} />
       <Route path="/deliver" render={() => <Delivery total={total} setTotal={setTotal} />} />
+      <Route path="/grocery" render={() => <GroceryDelivery total={total} setTotal={setTotal} />} />
       <Route path="/login" render={() => <Login setUsername={setUsername} />} />
       <Route
         path="/shopping-cart"

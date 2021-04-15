@@ -16,15 +16,22 @@ const ShoppingCart = ({ hidden }) => {
       setTrips(res.data.trips);
     };
     fetchTrips();
+
     const fetchDeliveries = async () => {
       const res = await axios.get("http://localhost/backend/delivery/userDeliveries.php", { params: { user_id: 1 } });
       setDeliveries(res.data.deliveries);
     };
     fetchDeliveries();
+
+    const fetchGroceries = async () => {
+      const res = await axios.get("http://localhost/backend/groceries/userGroceries.php", { params: { user_id: 1 } });
+      setGroceries(res.data.groceries);
+    };
+    fetchGroceries();
   }, []);
 
   return (
-    <div>
+<div>
       <h3>Your Shopping Cart</h3>
       {!trips.length ? (
         <div> You have no orders.</div>
@@ -75,6 +82,7 @@ const ShoppingCart = ({ hidden }) => {
         </div>
       )}
     </div>
+    
   );
 };
 

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Col , Row , Card, Button} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const DeliveryCart = (props) => {
+const GroceryCart = (props) => {
 
 const [totalPrice, setPrice] = useState([]);
 const [card_Objects , setCard_Objects ] = useState([]);
@@ -27,30 +27,22 @@ useEffect(() => {
         const card = document.getElementById(card_id);
         card.style.display = 'block';
         //e.target.appendChild(card);
-        e.target.insertAdjacentHTML('beforeend',('<p>$9.99</p>'));
+        e.target.insertAdjacentHTML('beforeend',('<p>$4.99</p>'));
         setPrice(totalPrice + parseFloat(card_price));
     
-        let card_OBJ = {
-            date_issued: "April 14, 2021 18:00",
-            date_done: "April 14, 2021 18:01",
-            total_price: parseFloat(card_price),
-            car_id: 1,
-            user_id: 1,
-            flower_id: parseInt(card_id)
-        }
+        let card_OBJ = parseInt(card_id);
+        
 
-        setCard_Objects([
-            ...card_Objects,
-            card_OBJ
-        ]);
+        setCard_Objects([ ...card_Objects, card_OBJ ]);
+        console.log(card_Objects);
 
-    }
+     }
 
     
 
     const set_Total_OBJ = (totalP) =>{
         props.setTotalPrice(totalP);
-        props.objectList(card_Objects);
+        props.objectList(card_Objects , totalPrice);
 
     }
 
@@ -74,7 +66,7 @@ useEffect(() => {
     );
 }
 
-export default DeliveryCart;
+export default GroceryCart;
 
 //<Button onclick={setTotal}>Checkout</Button>  <Button onClick={()=>set_Total_OBJ(totalPrice)}>Checkout</Button> 
 
