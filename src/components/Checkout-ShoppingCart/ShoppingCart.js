@@ -8,6 +8,7 @@ import OrderItem from "./OrderItem";
 const ShoppingCart = ({ hidden }) => {
   const [trips, setTrips] = useState([]);
   const [deliveries, setDeliveries] = useState([]);
+  const [groceries, setGroceries] = useState([]);
 
   useEffect(() => {
     const fetchTrips = async () => {
@@ -40,6 +41,29 @@ const ShoppingCart = ({ hidden }) => {
                 carName={trip.car_name}
                 carModel={trip.car_model}
                 price={trip.price}
+              />
+            );
+          })}
+          {deliveries.map((delivery) => {
+            return (
+              <OrderItem
+                key={delivery.id}
+                date={delivery.date_issued}
+                flowerName={delivery.flowerName}
+                carName={delivery.carName}
+                carModel={delivery.carModel}
+                price={delivery.total_price}
+              />
+            );
+          })}
+          {groceries.map((grocery) => {
+            return (
+              <OrderItem
+                key={grocery.items.id}
+                date={grocery.date_issued}
+                groceryName={grocery.items.name}
+                items={grocery}
+                price={grocery.total_price}
               />
             );
           })}

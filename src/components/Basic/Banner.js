@@ -21,7 +21,7 @@ const Banner = () => {
         <img className="d-block w-100" src={teslaY} alt="Second slide" />
         <Carousel.Caption>
           <h3>Ride and Delivery</h3>
-          <p>Something nice</p>
+          <p>Deliver flowers within 50km.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
@@ -34,8 +34,8 @@ const Banner = () => {
       <Carousel.Item>
         <img className="d-block w-100" src={tesla3} alt="Second slide" />
         <Carousel.Caption>
-          <h3>Fourth Service</h3>
-          <p>Something nice</p>
+          <h3>Deliver Groceries</h3>
+          <p>You don't need to go to the supermarket anymore. Try our new service.</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
