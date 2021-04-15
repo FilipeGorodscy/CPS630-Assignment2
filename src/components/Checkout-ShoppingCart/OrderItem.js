@@ -9,7 +9,7 @@ const OrderItem = ({ flowerName, groceryName, date, source, destination, carName
         <Card.Title>
           {source && `${source} to ${destination}`}
           {flowerName && "Delivery Service"}
-          {GroceryName && "Delivery Service"}
+          {groceryName && "Delivery Service"}
         </Card.Title>
         <Card.Text>
           Car: {carName} {carModel} <br />
