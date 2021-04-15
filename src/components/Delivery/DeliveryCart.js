@@ -33,7 +33,7 @@ useEffect(() => {
         let card_OBJ = {
             date_issued: "April 14, 2021 18:00",
             date_done: "April 14, 2021 18:01",
-            total_price: totalPrice,
+            total_price: card_price,
             car_id: 9,
             user_id: 1,
             flower_id: card_id
