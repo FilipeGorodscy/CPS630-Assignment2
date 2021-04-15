@@ -69,6 +69,8 @@ const ShoppingCart = ({ hidden }) => {
             console.log(grocery.items);
             grocery.items.map((el)=>{
               console.log(el);
+              console.log(el.name);
+              console.log(el.price);
               return (
               <OrderItem
                 groceryName={el.name}
