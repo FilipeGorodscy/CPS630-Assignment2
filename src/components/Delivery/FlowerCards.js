@@ -7,7 +7,9 @@ const FlowerCards = (props) =>{
 const dragStart = (e) =>{
   const target = e.target;
   e.dataTransfer.setData('card_id' , props.id);
+  e.dataTransfer.setData('card_name' , props.name);
   e.dataTransfer.setData('card_price' , props.price);
+  e.dataTransfer.setData('card_img' , props.img);
 
   setTimeout(() => {
     target.style.display='none';

@@ -22,6 +22,12 @@ useEffect(() => {
   }, []);
 
 console.log(total);
+
+const postObjects = (flower_objects) => {
+  for (let flower in flower_objects) {
+  axios.post("http://localhost/backend/delivery/create.php", flower);
+} 
+};
   
   return (
     <Container fluid>
@@ -30,12 +36,13 @@ console.log(total);
     <Col sm={10}>
     <Board>
     <FlowerCards id='1' className='card' img ='https://source.unsplash.com/random' name='random' price='9.99'></FlowerCards>
+    <FlowerCards id='2' className='card' img ='https://source.unsplash.com/random' name='randomm' price='9.99'></FlowerCards>
     </Board>  
     </Col>
     
     <Col sm={2}>
     <h6>Checkout</h6>
-    <DeliveryCart id='board-2' className='cart' setCart={setFlowersInCheckout} setTotalPrice={setTotal}> {flowersInCheckout} </DeliveryCart> 
+    <DeliveryCart id='board-2' className='cart' setCart={setFlowersInCheckout} setTotalPrice={setTotal} objectList={postObjects}> {flowersInCheckout} </DeliveryCart> 
 
     </Col>
   
