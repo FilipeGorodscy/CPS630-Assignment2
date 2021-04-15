@@ -28,8 +28,9 @@ const ShoppingCart = ({ hidden }) => {
       setGroceries(res.data.groceries);
     };
     fetchGroceries();
+    console.log(groceries);
   }, []);
-
+  console.log(groceries);
   return (
     <div>
       <h3>Your Shopping Cart</h3>
@@ -64,6 +65,7 @@ const ShoppingCart = ({ hidden }) => {
             );
           })}
           {groceries.map((grocery) => {
+            console.log(grocery);
             return (
               <OrderItem
                 key={grocery.items.id}
