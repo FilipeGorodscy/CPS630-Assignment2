@@ -33,7 +33,7 @@ const postObjects = (grocery_objects , price) => {
     items:grocery_objects
   };
 console.log(grocery_obj);
-  axios.post("http://localhost/backend/delivery/create.php", grocery_obj);
+  axios.post("http://localhost/backend/groceries/create.php", grocery_obj);
 
 };
 
