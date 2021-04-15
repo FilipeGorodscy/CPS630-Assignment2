@@ -35,12 +35,7 @@ $car = new Car($db);
 
 $car_name = $car_model = "";
 $car_price = $car_year = 0;
-/* if(isset($_POST["car_name"])){
-    $car_name = $_POST["car_name"];
-    $car_model = $_POST["car_model"];
-    $car_price = $_POST["car_price"];
-    $car_year = $_POST["car_year"];
-} */
+
 $data = json_decode(file_get_contents("php://input"));
 
 if(!empty($data->car_name) && !empty($data->car_model)){

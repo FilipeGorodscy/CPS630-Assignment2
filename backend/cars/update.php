@@ -31,10 +31,14 @@ $db = $database->getConnection();
   
 $car = new Car($db);
 
-if(isset($_POST["car_id"])){
-    $car->id = $_POST["car_id"];
-    $car->name = $_POST["car_name"];
-    $car->model = $_POST["car_model"];
+$data = json_decode(file_get_contents("php://input"));
+
+if(!empty($data->car_id)){
+    $car->id = $data->car_id;
+    $car->name = $data->car_name;
+    $car->model =$data->car_model;
+    $car->price =$data->car_price;
+    $car->year = $data->car_year;
 
     if($car->update()){
         http_response_code(200); // 200 ok

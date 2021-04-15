@@ -3,7 +3,7 @@ class Car{
   
     // database connection and table name
     private $conn;
-    private $table_name = "car";
+    private $table_name = "cars";
   
     // columns
     public $id;

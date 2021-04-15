@@ -10,6 +10,10 @@ DROP TABLE IF EXISTS cars;
 DROP TABLE IF EXISTS trips;
 DROP TABLE IF EXISTS delivery;
 DROP TABLE IF EXISTS services;
+DROP TABLE IF EXISTS review;
+DROP TABLE IF EXISTS grocery_items;
+DROP TABLE IF EXISTS grocery_order;
+DROP TABLE IF EXISTS grocery_details;
 
 /* create new tables */
 CREATE TABLE users (
@@ -36,6 +40,8 @@ CREATE TABLE cars (
     model VARCHAR(50) NOT NULL,
     img_path VARCHAR(250) NOT NULL,
     code INT NOT NULL,
+    year INT NOT NULL,
+    price FLOAT(10, 2) DEFAULT 0.0,
     available TINYINT DEFAULT 1 /* 0 => not available
                                    1 => available */
 );
@@ -50,7 +56,7 @@ CREATE TABLE trips (
     car_id INT NOT NULL,
     user_id INT NOT NULL,
 
-    FOREIGN KEY(car_id) REFERENCES car(id) ON DELETE CASCADE,
+    FOREIGN KEY(car_id) REFERENCES cars(id) ON DELETE CASCADE,
     FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
@@ -64,7 +70,7 @@ CREATE TABLE delivery (
     user_id INT NOT NULL,
     flower_id INT NOT NULL,
 
-    FOREIGN KEY(car_id) REFERENCES car(id) ON DELETE CASCADE,
+    FOREIGN KEY(car_id) REFERENCES cars(id) ON DELETE CASCADE,
     FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY(flower_id) REFERENCES flowers(id) ON DELETE CASCADE
 );
@@ -83,7 +89,39 @@ CREATE TABLE review (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE grocery_items (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    img_path VARCHAR(250) NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    price FLOAT(10, 2) DEFAULT 0.0
+);
+
+CREATE TABLE grocery_order (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    date_issued DATETIME NOT NULL,
+    date_done DATETIME NOT NULL,
+    total_price FLOAT(10, 2) NOT NULL,
+
+    user_id INT NOT NULL,
+    FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE grocery_details (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+
+    grocery_order_id INT NOT NULL,
+    grocery_item_id INT NOT NULL,
+
+    FOREIGN KEY(grocery_order_id) REFERENCES grocery_order(id) ON DELETE CASCADE,
+    FOREIGN KEY(grocery_item_id) REFERENCES grocery_items(id) ON DELETE CASCADE
+);
+
 /* Insert initial data */
+
+INSERT INTO grocery_items ( img_path, name, price) VALUES
+('images/groceries/eggs.jpg', 'Eggs', 2.99),
+('images/groceries/milk.jpg', 'Milk', 4.99),
+('images/groceries/bread.jpg', 'Bread', 5.99);
 
 INSERT INTO flowers (store_code, img_path, name, price) VALUES
 (1, 'images/flowers/spring.jpg', 'Spring Flower', 12.99),
@@ -99,3 +137,6 @@ INSERT INTO services (service_name, description) VALUES
 ('Ride', 'With our ride service you can get to where you want faster and safer'),
 ('Delivery', 'With our delivery service you can enjoy our finest choices of flower/coffee'),
 ('Ride & Delivery', 'With ride&delivery you can take a ride as well as pick your choice of items');
+
+INSERT INTO users (username, password, email, phone, address) VALUES
+('test', '5f4dcc3b5aa765d61d8327deb882cf99', 'email', 123, "address");
