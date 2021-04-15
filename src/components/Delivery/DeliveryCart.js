@@ -18,12 +18,16 @@ useEffect(() => {
         const card_price = e.dataTransfer.getData('card_price');
         const card_name = e.dataTransfer.getData('card_name');
         const card_img = e.dataTransfer.getData('card_img');
+        console.log(card_id);
+        console.log(card_price);
+        console.log(card_name);
+        console.log(card_img);
 
         const card = document.getElementById(card_id);
         card.style.display = 'block';
 
         //e.target.appendChild(card);
-        e.target.insertAdjacentHTML('beforeend',('<p>9.99</p>'));
+        e.target.insertAdjacentHTML('beforeend',('<p>$9.99</p>'));
         setPrice(totalPrice + parseFloat(card_price));
     
         let card_OBJ = {
