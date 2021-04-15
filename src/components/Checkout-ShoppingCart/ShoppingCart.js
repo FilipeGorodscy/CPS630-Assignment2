@@ -31,7 +31,7 @@ const ShoppingCart = ({ hidden }) => {
   }, []);
 
   return (
-<div>
+    <div>
       <h3>Your Shopping Cart</h3>
       {!trips.length ? (
         <div> You have no orders.</div>
@@ -82,7 +82,6 @@ const ShoppingCart = ({ hidden }) => {
         </div>
       )}
     </div>
-    
   );
 };
 
