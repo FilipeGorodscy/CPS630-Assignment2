@@ -11,12 +11,12 @@ const ShoppingCart = ({ hidden }) => {
 
   useEffect(() => {
     const fetchTrips = async () => {
-      const res = await axios.get("http://localhost/backend/trips/userTrips.php", { params: { user_id:3 } });
+      const res = await axios.get("http://localhost/backend/trips/userTrips.php", { params: { user_id: 1 } });
       setTrips(res.data.trips);
     };
     fetchTrips();
     const fetchDeliveries = async () => {
-      const res = await axios.get("http://localhost/backend/delivery/userDeliveries.php", { params: { user_id:1 } });
+      const res = await axios.get("http://localhost/backend/delivery/userDeliveries.php", { params: { user_id: 1 } });
       setDeliveries(res.data.deliveries);
     };
     fetchDeliveries();

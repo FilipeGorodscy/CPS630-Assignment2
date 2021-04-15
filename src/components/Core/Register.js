@@ -12,7 +12,7 @@ const Register = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost/backend/user/create.php", {
+    axios.post("http://localhost/backend/users/create.php", {
       username,
       password,
       email,

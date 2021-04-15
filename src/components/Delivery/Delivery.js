@@ -1,18 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Container, Col , Row , Card, Button } from "react-bootstrap";
+import { Container, Col, Row, Card, Button } from "react-bootstrap";
 import axios from "axios";
 
-import DeliveryCart from './DeliveryCart';
-import FlowerCards from './FlowerCards';
-import Board from './Board';
+import DeliveryCart from "./DeliveryCart";
+import FlowerCards from "./FlowerCards";
+import Board from "./Board";
 
+const Delivery = ({ total, setTotal }) => {
+  const [flowers, setFlowers] = useState([]);
+  const [flowersInCheckout, setFlowersInCheckout] = useState([]);
 
-const Delivery = ({total, setTotal}) => {
-
-const [flowers, setFlowers] = useState([]);
-const [flowersInCheckout, setFlowersInCheckout] = useState([]);
-
-useEffect(() => {
+  useEffect(() => {
     const fetchFlowers = async () => {
       const res = await axios.get("http://localhost/backend/flowers/read.php");
       const flowers = res.data.records;
@@ -21,47 +19,58 @@ useEffect(() => {
     fetchFlowers();
   }, []);
 
-console.log(total);
+  console.log(total);
 
-const postObjects = (flower_objects) => {
-  console.log(flower_objects);
-  for (let key of flower_objects) {
-    console.log(key);
-  axios.post("http://localhost/backend/delivery/create.php", key);
-}
-};
+  const postObjects = (flower_objects) => {
+    console.log(flower_objects);
+    for (let key of flower_objects) {
+      console.log(key);
+      axios.post("http://localhost/backend/delivery/create.php", key);
+    }
+  };
 
   return (
     <Container fluid>
-    <h1>Delivery Service</h1>
-  <Row>
-    <Col sm={10}>
-    <Board>
-    {flowers.map((flower) =>{
-        return (<FlowerCards id={flower.id} className='card' name={flower.name} price={flower.price} img={flower.img_path} > </FlowerCards>)
-      })};
-    </Board>  
-    </Col>
-    
-    <Col sm={2}>
-    <h6>Checkout</h6>
-    <DeliveryCart id='board-2' className='cart' setCart={setFlowersInCheckout} setTotalPrice={setTotal} objectList={postObjects}> {flowersInCheckout} </DeliveryCart> 
+      <h1>Delivery Service</h1>
+      <Row>
+        <Col sm={10}>
+          <Board>
+            {flowers.map((flower) => {
+              return (
+                <FlowerCards
+                  id={flower.id}
+                  className="card"
+                  name={flower.name}
+                  price={flower.price}
+                  img={flower.img_path}
+                >
+                  {" "}
+                </FlowerCards>
+              );
+            })}
+            ;
+          </Board>
+        </Col>
 
-    </Col>
-  
-  </Row>
+        <Col sm={2}>
+          <h6>Checkout</h6>
+          <DeliveryCart
+            id="board-2"
+            className="cart"
+            setCart={setFlowersInCheckout}
+            setTotalPrice={setTotal}
+            objectList={postObjects}
+          >
+            {" "}
+            {flowersInCheckout}{" "}
+          </DeliveryCart>
+        </Col>
+      </Row>
     </Container>
-    
   );
-  
-    
-
-  
-
 };
 
 export default Delivery;
-
 
 /*const Ride = ({ total, setTotal }) => {
   const [source, setSource] = useState();
@@ -88,7 +97,6 @@ export default Delivery;
                 "img_path": "images/flowers/spring.jpg",
                 "price": "12.99"
 */
-
 
 /* <h1 class="">Plan your Delivery</h1>
   <br>

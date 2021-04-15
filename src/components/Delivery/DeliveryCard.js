@@ -11,7 +11,7 @@ const DeliveryCard = () => {
       <p>It will find the closest driver available to deliver an item from the store of your choice.</p>
       <br />
       <Button variant="primary">
-        <Link to="/delivery" className="text-light">
+        <Link to="/deliver" className="text-light">
           Deliver an Item
         </Link>
       </Button>
