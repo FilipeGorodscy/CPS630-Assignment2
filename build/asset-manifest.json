@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.966c4e8c.chunk.css",
+    "main.js": "./static/js/main.cb2301a5.chunk.js",
+    "main.js.map": "./static/js/main.cb2301a5.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.c2caf247.js",
+    "runtime-main.js.map": "./static/js/runtime-main.c2caf247.js.map",
+    "static/js/2.4c32f51c.chunk.js": "./static/js/2.4c32f51c.chunk.js",
+    "static/js/2.4c32f51c.chunk.js.map": "./static/js/2.4c32f51c.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.966c4e8c.chunk.css.map": "./static/css/main.966c4e8c.chunk.css.map",
+    "static/js/2.4c32f51c.chunk.js.LICENSE.txt": "./static/js/2.4c32f51c.chunk.js.LICENSE.txt",
+    "static/media/Gorodscy.0cae7608.jpg": "./static/media/Gorodscy.0cae7608.jpg",
+    "static/media/MatthewFranks.49987371.png": "./static/media/MatthewFranks.49987371.png",
+    "static/media/tesla3.39919e8f.jpeg": "./static/media/tesla3.39919e8f.jpeg",
+    "static/media/teslaS.f91eef1d.png": "./static/media/teslaS.f91eef1d.png",
+    "static/media/teslaX.156beaa8.jpeg": "./static/media/teslaX.156beaa8.jpeg",
+    "static/media/teslaY.98d47c06.jpeg": "./static/media/teslaY.98d47c06.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c2caf247.js",
+    "static/js/2.4c32f51c.chunk.js",
+    "static/css/main.966c4e8c.chunk.css",
+    "static/js/main.cb2301a5.chunk.js"
+  ]
+}
