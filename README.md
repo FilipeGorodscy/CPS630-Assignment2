@@ -8,4 +8,4 @@ You will need to run:
 
 in order to create the build folder. You will need to rename this folder to "react" and paste it into the htdocs folder inside your XAMPP folder.
 
-Naow the app is ready to be viewed!
+Now the app is ready to be viewed!
