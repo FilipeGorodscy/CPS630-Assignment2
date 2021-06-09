@@ -2,8 +2,8 @@
 class Database{
   
     // database credentials
-    private $host = "localhost";
-    private $db_name = "asg1";
+    private $host = "ba9486e97738c2:fc6a764d@us-cdbr-east-04.cleardb.com";
+    private $db_name = "heroku_0f36606acb6602e";
     private $username = "root";
     private $password = "";
     public $conn;
