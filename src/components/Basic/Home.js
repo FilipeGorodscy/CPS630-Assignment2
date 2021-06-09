@@ -6,7 +6,7 @@ import RideCard from "../Ride/RideCard";
 import DeliveryCard from "../Delivery/DeliveryCard";
 import "../../styles/Home.css";
 import RideGreenCard from "../RideGreen/RideGreenCard";
-import Service4 from "../Service4";
+import Grocery from "../Groceries/Grocery";
 
 const Home = () => {
   return (
@@ -20,7 +20,7 @@ const Home = () => {
         <div id="separator" />
         <Col lg={6}>
           <DeliveryCard />
-          <Service4 />
+          <Grocery />
         </Col>
       </Row>
     </Container>
